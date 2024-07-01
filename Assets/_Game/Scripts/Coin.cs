@@ -7,7 +7,7 @@ public class Coin : MonoBehaviour, ICollectable
     [Header("Coin Params")]
     [Header("Value")]
     [SerializeField]
-    private int _value = 1;
+    private int _value = 50;
 
     [Space]
 
@@ -15,10 +15,10 @@ public class Coin : MonoBehaviour, ICollectable
     [Header("Effects")]
     [Header("Particles")]
     [SerializeField]
-    private string _collectParticleKey = "CoinCollect";
+    private string _collectParticleKey = "CoinCollectParticle";
     [Header("Audios")]
     [SerializeField]
-    private string _collectClipKey = "CoinCollect";
+    private string _collectClipKey = "CoinCollectClip";
     [Space]
 
     [Header("Components & References")]
@@ -57,9 +57,9 @@ public class Coin : MonoBehaviour, ICollectable
     {
         _collider.enabled = false;
 
-        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_collectParticleKey, transform.position);
+        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_collectParticleKey, transform.position);
 
-        GlobalBinder.singleton.AudioManager.PlaySound(_collectClipKey);
+        //GlobalBinder.singleton.AudioManager.PlaySound(_collectClipKey);
 
         GlobalBinder.singleton.CoinManager.HideCoin(this);
 

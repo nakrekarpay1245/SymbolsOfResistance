@@ -8,6 +8,11 @@ public class Factory : Unit
     private float _produceTime = 5;
     private float _lastProduceTime;
 
+    public void OnEnable()
+    {
+        _lastProduceTime = Time.time + _produceTime;
+    }
+
     private void Update()
     {
         if (_lastProduceTime <= Time.time)
@@ -19,7 +24,7 @@ public class Factory : Unit
 
     private void Produce()
     {
-        Debug.Log("Coin Produced!");
+        //Debug.Log("Coin Produced!");
         GlobalBinder.singleton.CoinManager.GenerateCoinAtPoint(transform.position);
     }
 }

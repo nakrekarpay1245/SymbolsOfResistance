@@ -11,10 +11,10 @@ public class UnitManager : MonoBehaviour
     {
         Unit currentUnit = _unitList[index];
         int unitPrice = currentUnit.Price;
-        //if (GlobalBinder.singleton.EconomyManager.IsMoneyEnoughForPurchase(unitPrice))
-        //{
-        return currentUnit;
-        //}
+        if (GlobalBinder.singleton.EconomyManager.IsMoneyEnoughForPurchase(unitPrice))
+        {
+            return currentUnit;
+        }
         Debug.LogWarning("No Money for: " + currentUnit.name + " !!!");
         return null;
     }

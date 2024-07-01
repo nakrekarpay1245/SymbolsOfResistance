@@ -14,15 +14,15 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
     [Header("Effects")]
     [Header("Particles")]
     [SerializeField]
-    private string _deadParticleKey = "Dead";
+    private string _deadParticleKey = "DeadParticle";
     [Header("Audios")]
     [SerializeField]
-    private string _deadClipKey = "Dead";
+    private string _deadClipKey = "DeadClip";
 
     public delegate void HealthChangeHandler(float health, float maxHealth);
     public event HealthChangeHandler OnHealthChanged;
 
-    public virtual void Awake()
+    public virtual void Start()
     {
         SetHealth();
     }

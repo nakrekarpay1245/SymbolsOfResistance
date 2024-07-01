@@ -16,9 +16,8 @@ public class Enemy : AbstractDamagable
     //Components
     private Rigidbody2D _rigidbody;
 
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
