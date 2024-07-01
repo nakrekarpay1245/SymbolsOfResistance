@@ -23,22 +23,12 @@ public class TileManager : MonoBehaviour
     private Vector2 _tileSpacing;
 
     private Tile[,] _tileGrid;
-    //public Tile[,] TileGrid
-    //{
-    //    get { return _tileGrid; }
-    //    private set { }
-    //}
-
     public List<Tile> _activeTileList;
-    //public List<Tile> ActiveTileList
-    //{
-    //    get { return _activeTileList; }
-    //    private set { }
-    //}
 
     [Header("Tile Parent")]
     [SerializeField]
     private Transform _tileParent;
+
     private void Awake()
     {
         _tileGrid = new Tile[_gridWidth, _gridHeight];
@@ -52,18 +42,25 @@ public class TileManager : MonoBehaviour
     private void GenerateTiles()
     {
         int index = 0;
+
+        // Calculate total grid size including spacing
+        float totalWidth = (_gridWidth - 1) * (1 + _tileSpacing.x);
+        float totalHeight = (_gridHeight - 1) * (1 + _tileSpacing.y);
+
+        // Calculate the offset to center the grid
+        Vector2 gridOffset = new Vector2(totalWidth / 2f, totalHeight / 2f) * -1f;
+
         for (int x = 0; x < _gridWidth; x++)
         {
             for (int y = 0; y < _gridHeight; y++)
             {
-                Vector2 gridOffset = new Vector2(_gridWidth / 2f, _gridHeight / 2f) * -1f +
-                    new Vector2(0.5f, 0.5f);
-
                 // Apply spacing to the tile position
-                Vector2 tilePosition = (new Vector2(x * (1 + _tileSpacing.x), y * (1 + _tileSpacing.y))
-                    + gridOffset);
+                Vector2 tilePosition = new Vector2(x * (1 + _tileSpacing.x), y * (1 + _tileSpacing.y)) + gridOffset;
 
-                Tile generatedTile = Instantiate(_tilePrefab, tilePosition, Quaternion.identity, _tileParent);
+                // Adjust position to be relative to the TileParent
+                Vector3 worldPosition = _tileParent.TransformPoint(tilePosition);
+
+                Tile generatedTile = Instantiate(_tilePrefab, worldPosition, Quaternion.identity, _tileParent);
 
                 Vector2Int tileGridPosition = new Vector2Int(x, y);
 

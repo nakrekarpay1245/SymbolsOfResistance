@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
+public class Selector : MonoBehaviour/*, /*ISelector,*/ /*ICollector*/
 {
-    [Header("Selector Params")]
-    [SerializeField]
-    private string _placeParticleName = "PlaceParticle";
+    //[Header("Selector Params")]
+    //[SerializeField]
+    //private string _placeParticleName = "PlaceParticle";
 
     private Unit _selectedUnit;
 
@@ -39,7 +39,10 @@ public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Tile clickedTile = GlobalBinder.singleton.TileManager.GetNearestTile(mousePosition);
-
+        if (clickedTile != null)
+        {
+            Debug.Log("CT: " + clickedTile.name);
+        }
         if (clickedTile != null && _selectedUnit)
         {
             if (clickedTile.TileState != TileState.Full)
@@ -59,15 +62,15 @@ public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
             //Debug.Log("Unit Selected But Not Placed");
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-        if (hit.collider != null)
-        {
-            if (hit.collider.TryGetComponent<ICollectable>(out ICollectable collectable))
-            {
-                Collect(collectable);
-            }
-        }
+        //if (hit.collider != null)
+        //{
+        //    if (hit.collider.TryGetComponent<ICollectable>(out ICollectable collectable))
+        //    {
+        //        Collect(collectable);
+        //    }
+        //}
     }
 
     /// <summary>
@@ -83,15 +86,15 @@ public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
             _selectedUnit.transform.position = mousePosition;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        //RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-        if (hit.collider != null)
-        {
-            if (hit.collider.TryGetComponent<ICollectable>(out ICollectable collectable))
-            {
-                Collect(collectable);
-            }
-        }
+        //if (hit.collider != null)
+        //{
+        //    if (hit.collider.TryGetComponent<ICollectable>(out ICollectable collectable))
+        //    {
+        //        Collect(collectable);
+        //    }
+        //}
     }
 
     /// <summary>
@@ -130,8 +133,9 @@ public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
         generatedUnit.Tile = tile;
         tile.TileState = TileState.Full;
         tile.Select();
-        GlobalBinder.singleton.EconomyManager.DecreaseCoin(generatedUnit.Price);
-        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_placeParticleName, tile.transform.position);
+        //GlobalBinder.singleton.EconomyManager.DecreaseCoin(generatedUnit.Price);
+        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_placeParticleKey, tile.transform.position);
+        //GlobalBinder.singleton.AudioManager.PlaySound(_placeSoundKey);
     }
 
     public void SelectUnit(int index)
@@ -144,8 +148,8 @@ public class Selector : MonoBehaviour, /*ISelector,*/ ICollector
     //    throw new System.NotImplementedException();
     //}
 
-    public void Collect(ICollectable collectable)
-    {
-        collectable.Collect();
-    }
+    //public void Collect(ICollectable collectable)
+    //{
+    //    collectable.Collect();
+    //}
 }
