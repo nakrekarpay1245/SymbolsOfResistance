@@ -11,14 +11,14 @@ public class Coin : MonoBehaviour, ICollectable
 
     [Space]
 
-    [Header("Effects & Animations")]
-    [Header("Effects")]
-    [Header("Particles")]
-    [SerializeField]
-    private string _collectParticleKey = "CoinCollectParticle";
-    [Header("Audios")]
-    [SerializeField]
-    private string _collectClipKey = "CoinCollectClip";
+    //[Header("Effects & Animations")]
+    //[Header("Effects")]
+    //[Header("Particles")]
+    //[SerializeField]
+    //private string _collectParticleKey = "CoinCollectParticle";
+    //[Header("Audios")]
+    //[SerializeField]
+    //private string _collectClipKey = "CoinCollectClip";
     [Space]
 
     [Header("Components & References")]

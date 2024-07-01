@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Wave
@@ -29,17 +30,19 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float _waveInterval = 5f;
 
     [Header("UI Elements")]
+    [Tooltip("Displayer displaying the current wave")]
+    [SerializeField] private Image _waveDisplayer;
     [Tooltip("Text displaying the current wave number.")]
     [SerializeField] private TextMeshProUGUI _waveText;
 
     [HideInInspector] public int TotalEnemiesKilled;
 
     private int _currentWaveIndex = 0;
-    private Vector3 _originalTextPosition;
+    private Vector3 _originalWaveDisplayerPosition;
 
     private void Start()
     {
-        _originalTextPosition = _waveText.rectTransform.position;
+        _originalWaveDisplayerPosition = _waveDisplayer.rectTransform.position;
         StartCoroutine(SpawnWaves());
     }
 
@@ -81,17 +84,17 @@ public class EnemyManager : MonoBehaviour
     private void DisplayWaveText()
     {
         _waveText.text = "Wave " + (_currentWaveIndex + 1);
-        _waveText.rectTransform.position = _originalTextPosition;
-        _waveText.rectTransform.localScale = Vector3.one;
+        _waveDisplayer.rectTransform.position = _originalWaveDisplayerPosition;
+        _waveDisplayer.rectTransform.localScale = Vector3.one;
 
         Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
 
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(_waveText.rectTransform.DOMove(screenCenter, 1f))
-                .Join(_waveText.rectTransform.DOScale(1.5f, 1f))
+        sequence.Append(_waveDisplayer.rectTransform.DOMove(screenCenter, 1f))
+                .Join(_waveDisplayer.rectTransform.DOScale(1.5f, 1f))
                 .AppendInterval(1f)
-                .Append(_waveText.rectTransform.DOMove(_originalTextPosition, 1f))
-                .Join(_waveText.rectTransform.DOScale(1f, 1f));
+                .Append(_waveDisplayer.rectTransform.DOMove(_originalWaveDisplayerPosition, 1f))
+                .Join(_waveDisplayer.rectTransform.DOScale(1f, 1f));
     }
 
     private bool AllEnemiesKilled()

@@ -50,7 +50,7 @@ TagManager:
   - name: Tile
     uniqueID: 794263975
     locked: 0
-  - name: Unit
+  - name: Unit&Enemy
     uniqueID: 1501292725
     locked: 0
   - name: Item
