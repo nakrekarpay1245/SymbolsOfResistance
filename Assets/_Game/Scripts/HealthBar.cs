@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class HealthBar : MonoBehaviour
 
     private void DisplayHealth(float health, float maxHealth)
     {
-        _healthBarFill.fillAmount = health / maxHealth;
+        float targetFillAmount = health / maxHealth;
+        _healthBarFill.DOFillAmount(targetFillAmount, 0.5f);
     }
 }

@@ -5,9 +5,9 @@ public class Ranged : Unit
     [Header("Ranged Params")]
     [Header("Detection Params")]
     [SerializeField]
-    private float distance = 10f;
+    private float _distance = 10f;
     [SerializeField]
-    private LayerMask enemyLayer;
+    private LayerMask _enemyLayer;
 
     [SerializeField]
     private float _attackTime = 5f;
@@ -49,15 +49,16 @@ public class Ranged : Unit
         Vector2 origin = transform.position;
         Vector2 direction = Vector2.right;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, enemyLayer);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _distance, _enemyLayer);
 
         if (hit.collider != null)
         {
             _enemyDetected = true;
-            //Debug.Log("Enemy detected: " + hit.collider.name);
+            Debug.Log("Enemy detected: " + hit.collider.name);
         }
         else
         {
+            Debug.Log("Enemy not detected!");
             _enemyDetected = false;
         }
     }
@@ -76,6 +77,6 @@ public class Ranged : Unit
         Gizmos.color = _enemyDetected ? Color.red : Color.green;
         Vector2 origin = transform.position;
         Vector2 direction = Vector2.right;
-        Gizmos.DrawLine(origin, origin + direction * distance);
+        Gizmos.DrawLine(origin, origin + direction * _distance);
     }
 }

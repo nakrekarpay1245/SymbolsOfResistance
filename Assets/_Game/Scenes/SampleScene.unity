@@ -234,9 +234,11 @@ MonoBehaviour:
   - {fileID: 577681712}
   - {fileID: 337671682}
   _waves:
-  - EnemyCount: 10
+  - EnemyCount: 1
     SpawnInterval: 5
-  _waveInterval: 5
+  - EnemyCount: 1
+    SpawnInterval: 5
+  _waveInterval: 25
   _waveDisplayer: {fileID: 1316069953}
   _waveText: {fileID: 1797109794}
   TotalEnemiesKilled: 0

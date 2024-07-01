@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Unit
   - Enemy
-  - Bullet
+  - PlayerDamageBox
+  - EnemyDamageBox
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - UI
   - Unit
   - Enemy
-  - Bullet
-  - 
+  - PlayerDamageBox
+  - EnemyDamageBox
   - 
   - 
   - 

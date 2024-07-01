@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 3569855418108908086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2525458, y: -1.6191447, z: -10}
+  m_LocalPosition: {x: -2.9629614, y: 1.3781226, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,8 +172,8 @@ MonoBehaviour:
   _maxHealth: 5
   _scaleChangeTime: 0.25
   _price: 100
-  distance: 10
-  enemyLayer:
+  _distance: 10
+  _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   _attackTime: 2.5
