@@ -9,17 +9,17 @@ public class Rock : MonoBehaviour, IDamager, IDamagable
     [SerializeField]
     private float _health = 1f;
 
-    [Header("Effects")]
-    [Header("Damage")]
-    [SerializeField]
-    private string _damageParticleKey = "RockDamage";
-    [SerializeField]
-    private string _damageClipKey = "RockDamage";
-    [Header("Die")]
-    [SerializeField]
-    private string _deadParticleKey = "RockDie";
-    [SerializeField]
-    private string _deadClipKey = "RockDie";
+    //[Header("Effects")]
+    //[Header("Damage")]
+    //[SerializeField]
+    //private string _damageParticleKey = "RockDamageParticle";
+    //[SerializeField]
+    //private string _damageClipKey = "RockDamageClip";
+    //[Header("Die")]
+    //[SerializeField]
+    //private string _deadParticleKey = "RockDieParticle";
+    //[SerializeField]
+    //private string _deadClipKey = "RockDieClip";
 
     private void Awake()
     {
@@ -41,15 +41,15 @@ public class Rock : MonoBehaviour, IDamager, IDamagable
         }
         else
         {
-            GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_damageParticleKey, transform.position);
-            GlobalBinder.singleton.AudioManager.PlaySound(_damageClipKey);
+            //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_damageParticleKey, transform.position);
+            //GlobalBinder.singleton.AudioManager.PlaySound(_damageClipKey);
         }
     }
 
     private void Die()
     {
-        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
-        GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey);
+        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
+        //GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

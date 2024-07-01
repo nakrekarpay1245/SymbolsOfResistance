@@ -11,13 +11,13 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
 
     protected bool _isDie = false;
 
-    [Header("Effects")]
-    [Header("Particles")]
-    [SerializeField]
-    private string _deadParticleKey = "DeadParticle";
-    [Header("Audios")]
-    [SerializeField]
-    private string _deadClipKey = "DeadClip";
+    //[Header("Effects")]
+    //[Header("Particles")]
+    //[SerializeField]
+    //private string _deadParticleKey = "DeadParticle";
+    //[Header("Audios")]
+    //[SerializeField]
+    //private string _deadClipKey = "DeadClip";
 
     public delegate void HealthChangeHandler(float health, float maxHealth);
     public event HealthChangeHandler OnHealthChanged;
@@ -70,11 +70,11 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
 
     private void PlayDeadParticle()
     {
-        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
+        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
     }
 
     private void PlayDeadSound()
     {
-        GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey, 0.5f);
+        //GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey, 0.5f);
     }
 }

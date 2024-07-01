@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 1017104129409841373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.551935, y: -3.574338, z: -10}
+  m_LocalPosition: {x: -4.2871695, y: -3.228106, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -288,8 +288,6 @@ MonoBehaviour:
   _health: 0
   _maxHealth: 5
   _scaleChangeTime: 0.25
-  _deadParticleKey: FactoryDeadParticle
-  _deadClipKey: FactoryDeadClip
   _price: 50
   _produceTime: 5
 --- !u!1 &6116365131850574480
