@@ -45,6 +45,7 @@ public class Tile : MonoBehaviour, ISelectable
     public void DeSelect()
     {
         //_spriteRendererComponent.sprite = _deSelectedTile;
+        //Debug.Log(name + "DESelected!");
     }
 
     /// <summary>

@@ -14,7 +14,6 @@ public class TileManager : MonoBehaviour
     [Tooltip("Grid horizontal scale")]
     [SerializeField]
     private int _gridWidth;
-
     [Tooltip("Grid vertical scale")]
     [SerializeField]
     private int _gridHeight;
@@ -24,18 +23,18 @@ public class TileManager : MonoBehaviour
     private Vector2 _tileSpacing;
 
     private Tile[,] _tileGrid;
-    public Tile[,] TileGrid
-    {
-        get { return _tileGrid; }
-        private set { }
-    }
+    //public Tile[,] TileGrid
+    //{
+    //    get { return _tileGrid; }
+    //    private set { }
+    //}
 
     public List<Tile> _activeTileList;
-    public List<Tile> ActiveTileList
-    {
-        get { return _activeTileList; }
-        private set { }
-    }
+    //public List<Tile> ActiveTileList
+    //{
+    //    get { return _activeTileList; }
+    //    private set { }
+    //}
 
     [Header("Tile Parent")]
     [SerializeField]
@@ -61,7 +60,8 @@ public class TileManager : MonoBehaviour
                     new Vector2(0.5f, 0.5f);
 
                 // Apply spacing to the tile position
-                Vector2 tilePosition = (new Vector2(x * (1 + _tileSpacing.x), y * (1 + _tileSpacing.y)) + gridOffset);
+                Vector2 tilePosition = (new Vector2(x * (1 + _tileSpacing.x), y * (1 + _tileSpacing.y))
+                    + gridOffset);
 
                 Tile generatedTile = Instantiate(_tilePrefab, tilePosition, Quaternion.identity, _tileParent);
 
@@ -69,7 +69,7 @@ public class TileManager : MonoBehaviour
 
                 generatedTile.TileGridPosition = tileGridPosition;
 
-                generatedTile.name = "Tile " + index;
+                generatedTile.name = "Tile(" + x + "," + y + ") " + index;
                 index++;
 
                 _tileGrid[x, y] = generatedTile;
@@ -94,24 +94,5 @@ public class TileManager : MonoBehaviour
                        GlobalBinder.singleton.GameSettings.MINIMUM_SELECTION_DISTANCE);
 
         return nearestTile;
-    }
-
-    /// <summary>
-    /// Returns a list of the nearest tiles to the given position, excluding the currentTile.
-    /// </summary>
-    /// <param name="position">The position from which to find the nearest tiles.</param>
-    /// <param name="count">The maximum number of nearest tiles to return.</param>
-    /// <param name="exceptTile">The tile to exclude from the nearest tiles.</param>
-    /// <returns>A list of the nearest tiles to the given position.</returns>
-    public List<Tile> GetNearestTiles(Vector2 position, int count, Tile exceptTile)
-    {
-        List<Tile> tileList = new List<Tile>(_activeTileList);
-
-        tileList.Remove(exceptTile);
-
-        tileList.Sort((a, b) => Vector2.Distance(a.transform.position,
-            position).CompareTo(Vector2.Distance(b.transform.position, position)));
-
-        return tileList.GetRange(0, Mathf.Min(count, tileList.Count));
     }
 }
