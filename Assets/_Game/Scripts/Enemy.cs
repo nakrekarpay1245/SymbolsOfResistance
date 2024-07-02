@@ -30,15 +30,23 @@ public class Enemy : AbstractDamagable
     private float _damage = 1f;
     [Header("Detection Params")]
     [SerializeField]
-    private float _distance = 1f;
+    private float _unitDetectionDistance = 0.35f;
     [SerializeField]
     private LayerMask _unitLayer;
+    [SerializeField]
+    private LayerMask _enemyLayer;
+    [SerializeField]
+    private float _enemyDetectionDistance = 1.1f;
+    [SerializeField]
+    private float _enemyDetectionRadius = 0.5f;
 
     //Components
     private Rigidbody2D _rigidbody;
 
     //Private
-    private bool _unitDetected;
+    public bool _unitDetected;
+    public bool _enemyDetected;
+
     public void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -63,30 +71,99 @@ public class Enemy : AbstractDamagable
             }
         }
     }
-
+    /// <summary>
+    /// Handles the movement and detection logic of the unit.
+    /// </summary>
     private void FixedUpdate()
     {
-        _rigidbody.velocity = -Vector3.right * _moveSpeed * Time.fixedDeltaTime;
+        Move();
+        DetectEnemiesAndUnits();
+    }
 
-        Vector2 origin = transform.position;
+    /// <summary>
+    /// Moves the unit to the left with a fixed speed.
+    /// </summary>
+    private void Move()
+    {
+        _rigidbody.velocity = -Vector3.right * _moveSpeed * Time.fixedDeltaTime;
+    }
+
+    /// <summary>
+    /// Detects other units or enemies within detection ranges.
+    /// </summary>
+    private void DetectEnemiesAndUnits()
+    {
+        Vector2 origin = _weapon.transform.position;
         Vector2 direction = -Vector2.right;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _distance, _unitLayer);
+        RaycastHit2D attackHit = Physics2D.Raycast(origin, direction, _unitDetectionDistance, _unitLayer);
 
-        if (hit.collider != null)
+        if (attackHit.collider != null)
         {
-            _unitDetected = true;
-            SetSpeed(_attackSpeed);
-            //Debug.Log("Unit detected: " + hit.collider.name);
+            HandleUnitDetection(attackHit.collider);
         }
         else
         {
-            SetSpeed(_walkSpeed);
-            _unitDetected = false;
-            //Debug.Log("Unit not detected!");
+            HandleNoUnitDetection();
         }
     }
 
+    /// <summary>
+    /// Handles the behavior when a unit is detected.
+    /// </summary>
+    /// <param name="unitCollider">Collider of the detected unit.</param>
+    private void HandleUnitDetection(Collider2D unitCollider)
+    {
+        _unitDetected = true;
+        SetSpeed(_attackSpeed);
+        //Debug.Log($"Unit detected: {unitCollider.name}");
+    }
+
+    /// <summary>
+    /// Handles the behavior when no unit is detected.
+    /// </summary>
+    private void HandleNoUnitDetection()
+    {
+        _unitDetected = false;
+
+        Collider2D enemyCollider = Physics2D.OverlapCircle(transform.position +
+            (Vector3.left * _enemyDetectionDistance), _enemyDetectionRadius, _enemyLayer);
+
+        if (enemyCollider != null && enemyCollider.gameObject != gameObject)
+        {
+            HandleEnemyDetection(enemyCollider);
+        }
+        else
+        {
+            HandleNoEnemyDetection();
+        }
+    }
+
+    /// <summary>
+    /// Handles the behavior when an enemy is detected.
+    /// </summary>
+    /// <param name="enemyCollider">Collider of the detected enemy.</param>
+    private void HandleEnemyDetection(Collider2D enemyCollider)
+    {
+        _enemyDetected = true;
+        SetSpeed(_attackSpeed);
+        //Debug.Log($"Enemy detected: {enemyCollider.name}");
+    }
+
+    /// <summary>
+    /// Handles the behavior when no enemy is detected.
+    /// </summary>
+    private void HandleNoEnemyDetection()
+    {
+        _enemyDetected = false;
+        SetSpeed(_walkSpeed);
+        //Debug.Log("No enemy detected.");
+    }
+
+    /// <summary>
+    /// Sets the speed of the unit.
+    /// </summary>
+    /// <param name="speed">Speed value to set.</param>
     private void SetSpeed(float speed)
     {
         _moveSpeed = speed;
@@ -111,9 +188,19 @@ public class Enemy : AbstractDamagable
 
     void OnDrawGizmos()
     {
+        Gizmos.color = _enemyDetected ? Color.red : Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + (Vector3.left * _enemyDetectionDistance), _enemyDetectionRadius);
+
         Gizmos.color = _unitDetected ? Color.red : Color.green;
-        Vector2 origin = transform.position;
-        Vector2 direction = -Vector2.right;
-        Gizmos.DrawLine(origin, origin + direction * _distance);
+
+        Vector3 origin = _weapon.transform.position;
+
+        Vector3 direction = -Vector3.right;
+
+        float rayDistance = _unitDetectionDistance;
+
+        Vector3 endPoint = origin + direction * rayDistance;
+
+        Gizmos.DrawLine(origin, endPoint);
     }
 }

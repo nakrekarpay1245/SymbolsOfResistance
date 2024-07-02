@@ -34,6 +34,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private Image _waveDisplayer;
     [Tooltip("Text displaying the current wave number.")]
     [SerializeField] private TextMeshProUGUI _waveText;
+    [Tooltip("Text displaying the current number of enemies.")]
+    [SerializeField] private TextMeshProUGUI _enemyCountText;
 
     [HideInInspector] public int TotalEnemiesKilled;
 
@@ -99,11 +101,19 @@ public class EnemyManager : MonoBehaviour
 
     private bool AllEnemiesKilled()
     {
+        UpdateEnemyCountText();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         return enemies.Length == 0;
     }
 
-    private void OnDrawGizmos()
+    private void UpdateEnemyCountText()
+    {
+        Wave currentWave = _waves[_currentWaveIndex];
+        int deadEnemies = currentWave.EnemyCount - GameObject.FindGameObjectsWithTag("Enemy").Length;
+        _enemyCountText.text = deadEnemies + " / " + currentWave.EnemyCount;
+    }
+
+    private void OnDrawGizmosSelected()
     {
         if (_generatePointList == null) return;
 
