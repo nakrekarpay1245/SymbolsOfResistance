@@ -36,7 +36,7 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
     public virtual void TakeDamage(float damage)
     {
         _health -= damage;
-        if (_health <= 0)
+        if (_health <= 0 && !_isDie)
         {
             Die();
         }

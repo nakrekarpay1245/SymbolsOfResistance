@@ -44,13 +44,17 @@ public class Enemy : AbstractDamagable
     private Rigidbody2D _rigidbody;
 
     //Private
-    public bool _unitDetected;
-    public bool _enemyDetected;
+    private bool _unitDetected;
+    private bool _enemyDetected;
+    private EnemyManager _enemyManager;
 
     public void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _weapon = GetComponentInChildren<Weapon>();
+
+        _enemyManager = GetComponentInParent<EnemyManager>();
+
         _weapon.DamageAmount = _damage;
         SetSpeed(_walkSpeed);
     }
@@ -178,6 +182,12 @@ public class Enemy : AbstractDamagable
     {
         base.TakeDamage(damage);
         BackUp();
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        _enemyManager.IncreaseDeadEnemyCount();
     }
 
     private void BackUp()

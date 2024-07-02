@@ -78,7 +78,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.35
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -122,7 +122,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 3277
+      atime1: 655
       atime2: 32768
       atime3: 65535
       atime4: 0
@@ -257,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _health: 1
+  _maxHorizontalDistance: 8
+  _rotationSpeed: 100
 --- !u!1 &5048288715620067274
 GameObject:
   m_ObjectHideFlags: 0

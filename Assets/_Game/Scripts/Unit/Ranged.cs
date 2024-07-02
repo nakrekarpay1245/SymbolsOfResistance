@@ -54,11 +54,11 @@ public class Ranged : Unit
         if (hit.collider != null)
         {
             _enemyDetected = true;
-            Debug.Log("Enemy detected: " + hit.collider.name);
+            //Debug.Log("Enemy detected: " + hit.collider.name);
         }
         else
         {
-            Debug.Log("Enemy not detected!");
+            //Debug.Log("Enemy not detected!");
             _enemyDetected = false;
         }
     }

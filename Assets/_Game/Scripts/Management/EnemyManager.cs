@@ -37,11 +37,9 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("Text displaying the current number of enemies.")]
     [SerializeField] private TextMeshProUGUI _enemyCountText;
 
-    [HideInInspector] public int TotalEnemiesKilled;
-
     private int _currentWaveIndex = 0;
     private Vector3 _originalWaveDisplayerPosition;
-
+    private int _deadEnemyCount;
     private void Start()
     {
         _originalWaveDisplayerPosition = _waveDisplayer.rectTransform.position;
@@ -52,11 +50,14 @@ public class EnemyManager : MonoBehaviour
     {
         while (_currentWaveIndex < _waves.Count)
         {
-            DisplayWaveText();
-
+            yield return new WaitForSeconds(_waveInterval);
             Wave currentWave = _waves[_currentWaveIndex];
+            DisplayWaveText();
+            ResetDeadEnemyCount();
+
             for (int i = 0; i < currentWave.EnemyCount; i++)
             {
+                Debug.Log("SPAWN " + i + " WN: " + _currentWaveIndex);
                 SpawnEnemy();
                 yield return new WaitForSeconds(currentWave.SpawnInterval);
             }
@@ -64,8 +65,6 @@ public class EnemyManager : MonoBehaviour
             yield return new WaitUntil(() => AllEnemiesKilled());
 
             _currentWaveIndex++;
-            if (_currentWaveIndex < _waves.Count)
-                yield return new WaitForSeconds(_waveInterval);
         }
     }
 
@@ -80,7 +79,7 @@ public class EnemyManager : MonoBehaviour
         Enemy enemyPrefab = _enemyPrefabList[Random.Range(0, _enemyPrefabList.Count)];
         Transform spawnPoint = _generatePointList[Random.Range(0, _generatePointList.Count)];
 
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, transform);
     }
 
     private void DisplayWaveText()
@@ -101,16 +100,26 @@ public class EnemyManager : MonoBehaviour
 
     private bool AllEnemiesKilled()
     {
-        UpdateEnemyCountText();
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        return enemies.Length == 0;
+        Wave currentWave = _waves[_currentWaveIndex];
+        return _deadEnemyCount >= currentWave.EnemyCount;
     }
 
     private void UpdateEnemyCountText()
     {
         Wave currentWave = _waves[_currentWaveIndex];
-        int deadEnemies = currentWave.EnemyCount - GameObject.FindGameObjectsWithTag("Enemy").Length;
-        _enemyCountText.text = deadEnemies + " / " + currentWave.EnemyCount;
+        _enemyCountText.text = _deadEnemyCount + " / " + currentWave.EnemyCount;
+    }
+
+    public void IncreaseDeadEnemyCount()
+    {
+        _deadEnemyCount++;
+        UpdateEnemyCountText();
+    }
+
+    public void ResetDeadEnemyCount()
+    {
+        _deadEnemyCount = 0;
+        UpdateEnemyCountText();
     }
 
     private void OnDrawGizmosSelected()
