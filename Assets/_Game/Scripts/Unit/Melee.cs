@@ -69,11 +69,11 @@ public class Melee : Unit
             if (hit.collider != null)
             {
                 _enemyDetected = true;
-                Debug.Log(weapon.name + " Detect Enemy:" + hit.collider.name);
+                //Debug.Log(weapon.name + " Detect Enemy:" + hit.collider.name);
                 return;
             }
             _enemyDetected = false;
-            Debug.Log("Enemy not detected!");
+            //Debug.Log("Enemy not detected!");
         }
     }
 

@@ -11,6 +11,14 @@ public abstract class Unit : AbstractDamagable
         private set => _price = value;
     }
 
+    [SerializeField]
+    private Sprite _unitIcon;
+    public Sprite UnitIcon
+    {
+        get => _unitIcon;
+        private set => _unitIcon = value;
+    }
+
     private Tile _tile;
 
     public Tile Tile

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Selector : MonoBehaviour, ICollector /*,ISelector*/
@@ -6,11 +7,25 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
     //[SerializeField]
     //private string _placeParticleName = "PlaceParticle";
 
+    [Header("Selector Params")]
+    [SerializeField]
+    private Transform _unitDisplayer;
+    [SerializeField]
+    private SpriteRenderer _unitDisplayerSprite;
+
     private Unit _selectedUnit;
 
     private void Update()
     {
         HandleMouseInput();
+
+        if (_selectedUnit != null)
+        {
+            ShowUnitDisplayer();
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _unitDisplayer.transform.position = mousePosition + (Vector3.forward * 10);
+        }
     }
 
     /// <summary>
@@ -49,11 +64,11 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
             {
                 SelectTile(clickedTile, _selectedUnit);
                 _selectedUnit = null;
+                HideUnitDisplayer();
             }
             else
             {
                 _selectedUnit = null;
-
                 Debug.LogWarning(clickedTile.name + " is FULL!");
             }
         }
@@ -83,7 +98,9 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (_selectedUnit != null)
         {
-            _selectedUnit.transform.position = mousePosition;
+            ShowUnitDisplayer();
+            _unitDisplayer.transform.position = mousePosition + (Vector3.forward * 10);
+            _selectedUnit.transform.position = mousePosition + (Vector3.forward * 10);
         }
 
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
@@ -110,11 +127,13 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
             if (currentTile.TileState != TileState.Full)
             {
                 SelectTile(currentTile, _selectedUnit);
+                HideUnitDisplayer();
                 _selectedUnit = null;
             }
             else
             {
                 _selectedUnit = null;
+                HideUnitDisplayer();
                 Debug.LogWarning(currentTile.name + " is FULL!");
             }
         }
@@ -151,5 +170,15 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
     public void Collect(ICollectable collectable)
     {
         collectable.Collect();
+    }
+
+    private void ShowUnitDisplayer()
+    {
+        _unitDisplayerSprite.sprite = _selectedUnit.UnitIcon;
+        _unitDisplayer.DOScale(1f, 0.5f);
+    }
+    private void HideUnitDisplayer()
+    {
+        _unitDisplayer.DOScale(0f, 0.5f);
     }
 }

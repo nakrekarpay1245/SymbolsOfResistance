@@ -1153,6 +1153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coinPrefab: {fileID: -5769493434890396091, guid: 165b7c12e2a246e4192ca51147e446f0, type: 3}
+  _animationDuration: 0.5
+  _collectPoint: {fileID: 0}
 --- !u!1 &307408380
 GameObject:
   m_ObjectHideFlags: 0

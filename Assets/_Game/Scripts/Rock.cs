@@ -53,7 +53,7 @@ public class Rock : MonoBehaviour, IDamager, IDamagable
     {
         if (transform.position.x >= _maxHorizontalDistance)
         {
-            Debug.Log("HORIZOTAL DIE");
+            //Debug.Log("HORIZOTAL DIE");
             Die();
         }
     }

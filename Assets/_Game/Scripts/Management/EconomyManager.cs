@@ -12,6 +12,8 @@ public class EconomyManager : MonoBehaviour
     [Space]
 
     [SerializeField]
+    private Transform _coinDisplayer;
+    [SerializeField]
     private TextMeshProUGUI _coinCountText;
 
     private void Awake()
@@ -41,7 +43,12 @@ public class EconomyManager : MonoBehaviour
     {
         int currentCoinCount = int.Parse(_coinCountText.text);
 
-        DOTween.To(() => currentCoinCount, x => currentCoinCount = x, _coinCount, 1f)
+        _coinDisplayer.DOScale(Vector3.one * 1.5f, 0.25f).SetDelay(0.25f).OnComplete(() =>
+        {
+            _coinDisplayer.DOScale(Vector3.one, 0.25f);
+        });
+
+        DOTween.To(() => currentCoinCount, x => currentCoinCount = x, _coinCount, 0.5f)
             .OnUpdate(() =>
             {
                 _coinCountText.text = currentCoinCount.ToString();

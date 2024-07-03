@@ -8,6 +8,14 @@ public class CoinManager : MonoBehaviour
     [SerializeField]
     private Coin _coinPrefab;
 
+    [Header("Coin Manager PArams")]
+    [SerializeField]
+    private float _animationDuration = 0.5f;
+
+    [Header("Coin Manager PArams")]
+    [SerializeField]
+    private Transform _collectPoint;
+
     private ObjectPool<Coin> _coinPool;
 
     private void Awake()
@@ -51,6 +59,9 @@ public class CoinManager : MonoBehaviour
 
     public void HideCoin(Coin coin)
     {
-        _coinPool.ReturnObjectToPool(coin);
+        coin.transform.DOMove(_collectPoint.position, _animationDuration).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            _coinPool.ReturnObjectToPool(coin);
+        });
     }
 }
