@@ -41,6 +41,15 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
             Die();
         }
 
+        Vector3 popUpTextPosition = transform.position;
+
+        string popUpText = "-" + damage.ToString();
+
+        float popUpDuration = GlobalBinder.singleton.TimeManager.PopUpTextAnimationDuration +
+            GlobalBinder.singleton.TimeManager.PopUpTextAnimationDelay;
+
+        GlobalBinder.singleton.PopUpTextManager.ShowPopUpText(popUpTextPosition, popUpText, popUpDuration);
+
         OnHealthChanged?.Invoke(_health, _maxHealth);
     }
 

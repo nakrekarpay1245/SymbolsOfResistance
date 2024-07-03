@@ -5,25 +5,29 @@ namespace Leaf._helpers
     public class TimeManager : MonoSingleton<TimeManager>
     {
         [Header(("Time Parameters"))]
+        [Header(("UI Parameters"))]
         [SerializeField]
         private float _uiDelay = 0.125f;
         public float UiDelay { get => _uiDelay; private set => _uiDelay = value; }
 
-        [Header(("Time Parameters"))]
+        [Header(("PopUp Parameters"))]
         [SerializeField]
-        private float _popUpTextAnimationDuration = 0.125f;
+        private float _popUpTextAnimationDuration = 0.5f;
         public float PopUpTextAnimationDuration
         {
             get => _popUpTextAnimationDuration;
             private set => _popUpTextAnimationDuration = value;
         }
 
+        [SerializeField]
+        private float _popUpTextAnimationDelay = 0.25f;
         public float PopUpTextAnimationDelay
         {
-            get => _popUpTextAnimationDuration * Random.Range(3, 5);
-            private set => _popUpTextAnimationDuration = value;
+            get => _popUpTextAnimationDelay;
+            private set => _popUpTextAnimationDelay = value;
         }
 
+        [Header(("Bullet Parameters"))]
         [SerializeField]
         private float _bulletArriveTime = 0.125f;
         public float BulletArriveTime { get => _bulletArriveTime; private set => _bulletArriveTime = value; }

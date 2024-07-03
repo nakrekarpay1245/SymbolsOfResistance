@@ -13,14 +13,18 @@ public class TileManager : MonoBehaviour
     [Header("Grid Scale")]
     [Tooltip("Grid horizontal scale")]
     [SerializeField]
-    private int _gridWidth;
+    private int _gridWidth = 5;
     [Tooltip("Grid vertical scale")]
     [SerializeField]
-    private int _gridHeight;
+    private int _gridHeight = 5;
+
+    [Header("Tile Scale")]
+    [SerializeField]
+    private Vector2 _tileScale = Vector2.one;
 
     [Header("Tile Spacing")]
     [SerializeField]
-    private Vector2 _tileSpacing;
+    private Vector2 _tileSpacing = Vector2.zero;
 
     private Tile[,] _tileGrid;
     public List<Tile> _activeTileList;
@@ -61,6 +65,7 @@ public class TileManager : MonoBehaviour
                 Vector3 worldPosition = _tileParent.TransformPoint(tilePosition);
 
                 Tile generatedTile = Instantiate(_tilePrefab, worldPosition, Quaternion.identity, _tileParent);
+                generatedTile.transform.localScale = _tileScale;
 
                 Vector2Int tileGridPosition = new Vector2Int(x, y);
 

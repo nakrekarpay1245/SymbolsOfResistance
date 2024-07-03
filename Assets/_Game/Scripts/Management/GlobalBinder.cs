@@ -30,6 +30,9 @@ public class GlobalBinder : MonoSingleton<GlobalBinder>
     [Header("Pause")]
     public PauseManager PauseManager;
 
+    [Header("PopUp")]
+    public PopUpTextManager PopUpTextManager;
+
     [Header("Tile")]
     public TileManager TileManager;
 

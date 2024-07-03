@@ -57,7 +57,7 @@ public class EnemyManager : MonoBehaviour
 
             for (int i = 0; i < currentWave.EnemyCount; i++)
             {
-                Debug.Log("SPAWN " + i + " WN: " + _currentWaveIndex);
+                //Debug.Log("SPAWN " + i + " WN: " + _currentWaveIndex);
                 SpawnEnemy();
                 yield return new WaitForSeconds(currentWave.SpawnInterval);
             }
