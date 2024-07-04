@@ -204,8 +204,8 @@ MonoBehaviour:
   _scaleChangeTime: 0.25
   _damageParticleKey: EnemyBloodDamageParticle
   _deadParticleKey: EnemyBloodDeadParticle
-  _damageClipKey: EnemyBloodDamageClip
-  _deadClipKey: EnemyBloodDeadParticle
+  _damageClipKey: BloodDamageClip
+  _deadClipKey: BloodDeadClip
   _attackSpeed: 0
   _walkSpeed: 25
   _backUpDuration: 0.1

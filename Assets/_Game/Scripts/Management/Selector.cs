@@ -4,10 +4,17 @@ using UnityEngine;
 public class Selector : MonoBehaviour, ICollector /*,ISelector*/
 {
     [Header("Selector Params")]
+    [Header("Placement Params")]
     [SerializeField]
     private string _placementParticleKey = "UnitPlacementParticle";
     [SerializeField]
     private string _placementClipKey = "UnitPlacementParticle";
+
+    [Header("Collect Params")]
+    [SerializeField]
+    private string _collectParticleKey = "UnitPlacementParticle";
+    [SerializeField]
+    private string _collectClipKey = "CollectClip";
 
     [Header("Selector Params")]
     [SerializeField]
@@ -172,6 +179,7 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
     public void Collect(ICollectable collectable)
     {
         collectable.Collect();
+        GlobalBinder.singleton.AudioManager.PlaySound(_collectClipKey);
     }
 
     private void ShowUnitDisplayer()

@@ -231,8 +231,8 @@ MonoBehaviour:
   _scaleChangeTime: 0.25
   _damageParticleKey: EnemyMetalDamageParticle
   _deadParticleKey: EnemyMetalDeadParticle
-  _damageClipKey: EnemyMetalDamageClip
-  _deadClipKey: EnemyMetalDeadParticle
+  _damageClipKey: MetalHitClip
+  _deadClipKey: FireExplosionClip
   _attackSpeed: 0
   _walkSpeed: 25
   _backUpDuration: 0.15
