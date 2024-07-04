@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 3569855418108908086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04566193, y: -2.1689498, z: 0}
+  m_LocalPosition: {x: 1.7344168, y: -3.0185533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,8 +173,8 @@ MonoBehaviour:
   _scaleChangeTime: 0.25
   _damageParticleKey: BarrelDamageParticle
   _deadParticleKey: BarrelDeadParticle
-  _damageClipKey: BarrelDamageClip
-  _deadClipKey: BarrelDeadClip
+  _damageClipKey: WoodDamageClip
+  _deadClipKey: WoodDeadClip
   _price: 50
   _unitIcon: {fileID: 21300000, guid: 9e8df54cd22d2f14c8c60d7183dc8bda, type: 3}
 --- !u!1 &4413132288393287608
