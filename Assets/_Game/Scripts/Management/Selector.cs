@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class Selector : MonoBehaviour, ICollector /*,ISelector*/
 {
-    //[Header("Selector Params")]
-    //[SerializeField]
-    //private string _placeParticleName = "PlaceParticle";
+    [Header("Selector Params")]
+    [SerializeField]
+    private string _placementParticleKey = "UnitPlacementParticle";
+    [SerializeField]
+    private string _placementClipKey = "UnitPlacementParticle";
 
     [Header("Selector Params")]
     [SerializeField]
@@ -153,8 +155,8 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
         tile.TileState = TileState.Full;
         tile.Select();
         GlobalBinder.singleton.EconomyManager.DecreaseCoin(generatedUnit.Price);
-        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_placeParticleKey, tile.transform.position);
-        //GlobalBinder.singleton.AudioManager.PlaySound(_placeSoundKey);
+        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_placementParticleKey, tile.transform.position);
+        GlobalBinder.singleton.AudioManager.PlaySound(_placementClipKey);
     }
 
     public void SelectUnit(int index)

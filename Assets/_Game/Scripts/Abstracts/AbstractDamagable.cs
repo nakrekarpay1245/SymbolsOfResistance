@@ -11,13 +11,17 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
 
     protected bool _isDie = false;
 
-    //[Header("Effects")]
-    //[Header("Particles")]
-    //[SerializeField]
-    //private string _deadParticleKey = "DeadParticle";
-    //[Header("Audios")]
-    //[SerializeField]
-    //private string _deadClipKey = "DeadClip";
+    [Header("Effects")]
+    [Header("Particles")]
+    [SerializeField]
+    private string _damageParticleKey = "DamageParticle";
+    [SerializeField]
+    private string _deadParticleKey = "DeadParticle";
+    [Header("Audios")]
+    [SerializeField]
+    private string _damageClipKey = "DamageClip";
+    [SerializeField]
+    private string _deadClipKey = "DeadClip";
 
     public delegate void HealthChangeHandler(float health, float maxHealth);
     public event HealthChangeHandler OnHealthChanged;
@@ -40,6 +44,10 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
         {
             Die();
         }
+
+        //Play Effects
+        PlayDamageParticle();
+        PlayDamageSound();
 
         Vector3 popUpTextPosition = transform.position;
 
@@ -77,13 +85,23 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
         Destroy(gameObject);
     }
 
+    private void PlayDamageParticle()
+    {
+        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_damageParticleKey, transform.position);
+    }
+
+    private void PlayDamageSound()
+    {
+        GlobalBinder.singleton.AudioManager.PlaySound(_damageClipKey, 0.5f);
+    }
+
     private void PlayDeadParticle()
     {
-        //GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
+        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_deadParticleKey, transform.position);
     }
 
     private void PlayDeadSound()
     {
-        //GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey, 0.5f);
+        GlobalBinder.singleton.AudioManager.PlaySound(_deadClipKey, 0.5f);
     }
 }

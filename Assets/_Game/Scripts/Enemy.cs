@@ -28,6 +28,12 @@ public class Enemy : AbstractDamagable
     private float _attackTime = 5f;
     [SerializeField]
     private float _damage = 1f;
+    [Header("Particles")]
+    [SerializeField]
+    private string _attackParticleKey = "EnemyMeleeAttackParticle";
+    [SerializeField]
+    private string _attackClipKey = "EnemyMeleeAttackClip";
+
     [Header("Detection Params")]
     [SerializeField]
     private float _unitDetectionDistance = 0.35f;
@@ -175,6 +181,9 @@ public class Enemy : AbstractDamagable
 
     private void Attack()
     {
+        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_attackParticleKey, transform.position);
+        GlobalBinder.singleton.AudioManager.PlaySound(_attackClipKey);
+
         _weapon.Attack();
     }
 

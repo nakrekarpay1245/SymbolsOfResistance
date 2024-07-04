@@ -19,6 +19,12 @@ public class Melee : Unit
     [SerializeField]
     private LayerMask _enemyLayer;
 
+    [Header("Particles")]
+    [SerializeField]
+    private string _attackParticleKey = "AttackParticle";
+    [SerializeField]
+    private string _attackClipKey = "AttackClip";
+
     //Private
     private bool _enemyDetected;
     public void Awake()
@@ -79,6 +85,8 @@ public class Melee : Unit
 
     private void Attack()
     {
+        GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_attackParticleKey, transform.position);
+        GlobalBinder.singleton.AudioManager.PlaySound(_attackClipKey);
         foreach (Weapon weapon in _weaponList)
         {
             weapon.Attack();

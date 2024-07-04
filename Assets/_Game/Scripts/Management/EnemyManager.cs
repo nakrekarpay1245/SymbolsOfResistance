@@ -66,6 +66,8 @@ public class EnemyManager : MonoBehaviour
 
             _currentWaveIndex++;
         }
+
+        GlobalBinder.singleton.LevelManager.LevelComplete();
     }
 
     private void SpawnEnemy()
