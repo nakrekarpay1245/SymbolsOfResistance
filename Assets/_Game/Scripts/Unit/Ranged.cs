@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Ranged : Unit
@@ -29,7 +30,15 @@ public class Ranged : Unit
     [SerializeField]
     private string _throwClipKey = "RockThrowClip";
 
+    public int _isAttackHash;
+
     public bool _enemyDetected;
+
+    public override void Awake()
+    {
+        base.Awake();
+        _isAttackHash = Animator.StringToHash("isAttack");
+    }
 
     private void Update()
     {
@@ -42,7 +51,6 @@ public class Ranged : Unit
             }
         }
     }
-
 
     void FixedUpdate()
     {
@@ -65,6 +73,8 @@ public class Ranged : Unit
 
     private void ThrowRock()
     {
+        _animator.SetTrigger(_isAttackHash);
+
         Vector3 muzzlePosition = _muzzleTransform.position;
         Rock generatedRock = Instantiate(_rockPrefab, muzzlePosition, Quaternion.identity);
         generatedRock.GetComponent<Rigidbody2D>().AddForce(Vector3.right * _rockForce);

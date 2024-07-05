@@ -26,6 +26,13 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
     public delegate void HealthChangeHandler(float health, float maxHealth);
     public event HealthChangeHandler OnHealthChanged;
 
+    private Collider2D _collider;
+
+    public virtual void Awake()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
+
     public virtual void Start()
     {
         SetHealth();
@@ -74,15 +81,14 @@ public class AbstractDamagable : MonoBehaviour, IDamagable
     public virtual IEnumerator DieRoutine()
     {
         _isDie = true;
+        _collider.enabled = false;
 
         //Play Effects
         PlayDeadParticle();
         PlayDeadSound();
-        yield return new WaitForSeconds(GlobalBinder.singleton.TimeManager.DamagableDestroyDelay);
-
-        // Shrink
         transform.DOScale(0f, GlobalBinder.singleton.TimeManager.DamagableScaleChangeTime);
-        Destroy(gameObject);
+        Destroy(gameObject, GlobalBinder.singleton.TimeManager.DamagableScaleChangeTime);
+        yield return new WaitForSeconds(GlobalBinder.singleton.TimeManager.DamagableDestroyDelay);
     }
 
     private void PlayDamageParticle()

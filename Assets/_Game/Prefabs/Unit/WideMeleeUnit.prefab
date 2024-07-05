@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9686275, g: 0.34509805, b: 0.45098042, a: 1}
+  m_Color: {r: 0.49019608, g: 1, b: 0.29411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7959738509133045108}
   - component: {fileID: 3376282899300617756}
+  - component: {fileID: 2706688281113161127}
   m_Layer: 0
   m_Name: ManSprite
   m_TagString: Untagged
@@ -148,17 +149,38 @@ SpriteRenderer:
   m_SortingLayerID: 1501292725
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eb7a95bef8adbed4784b3cadb9b027ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8a08c1612d40aa4fa3bcf9c3d5fa4c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9980469, y: 1.0605469}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2706688281113161127
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812918215014428839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f9311893e52b4f49bb1b5a58007ad7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &824067095793285941
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +887,7 @@ Transform:
   m_GameObject: {fileID: 8467596031656478527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0067227, y: 1.3240236, z: 0}
+  m_LocalPosition: {x: 3.5502286, y: -0.41095912, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -942,7 +964,9 @@ MonoBehaviour:
   _damageClipKey: BloodDamageClip
   _deadClipKey: BloodDeadClip
   _price: 125
-  _unitIcon: {fileID: 21300000, guid: eb7a95bef8adbed4784b3cadb9b027ca, type: 3}
+  _unitIcon: {fileID: 21300000, guid: f8a08c1612d40aa4fa3bcf9c3d5fa4c9, type: 3}
+  _animator: {fileID: 0}
+  _isHurtHash: 0
   _weaponList:
   - {fileID: 8582029487219762008}
   - {fileID: 5927331850042679715}
@@ -955,3 +979,4 @@ MonoBehaviour:
     m_Bits: 128
   _attackParticleKey: WideMeleeAttackParticle
   _attackClipKey: WideMeleeAttackClip
+  _isAttackHash: 0

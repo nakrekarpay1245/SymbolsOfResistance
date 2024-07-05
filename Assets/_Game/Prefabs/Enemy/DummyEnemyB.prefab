@@ -32,12 +32,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4931483031595160641}
   - {fileID: 3261851223924149687}
   - {fileID: 1750477148864966428}
   - {fileID: 6262572394909318203}
   - {fileID: 4331046139894218375}
   - {fileID: 1800964459862649233}
+  - {fileID: 4931483031595160641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &177778620483216385
@@ -149,6 +149,9 @@ MonoBehaviour:
     m_Bits: 128
   _enemyDetectionDistance: 1.1
   _enemyDetectionRadius: 0.5
+  _animator: {fileID: 0}
+  _isAttackHash: 0
+  _isHurtHash: 0
 --- !u!1 &2480149595824986898
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6039216, g: 0.58431375, b: 0.5176471, a: 1}
+  m_Color: {r: 1, g: 0.29411766, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -645,6 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3261851223924149687}
   - component: {fileID: 3407904138624931114}
+  - component: {fileID: 5985567199424185266}
   m_Layer: 7
   m_Name: DogSprite
   m_TagString: Untagged
@@ -662,8 +666,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7932619358958464008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -708,7 +712,7 @@ SpriteRenderer:
   m_SortingLayerID: 1501292725
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ee1f3c874eb33924985097b4b08b3058, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7517b8ef5cd68444a9582d87c167c36c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -719,6 +723,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5985567199424185266
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634540252535612402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93acf6f0a46cb944cbac55c7a4391def, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1800964459862263783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,6 +795,14 @@ PrefabInstance:
     - target: {fileID: 454262, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19840014, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875214, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

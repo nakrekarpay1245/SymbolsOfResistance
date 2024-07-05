@@ -30,4 +30,29 @@ public abstract class Unit : AbstractDamagable
             transform.position = _tile.transform.position;
         }
     }
+
+    [Header("Animator Params")]
+    [SerializeField]
+    protected Animator _animator;
+    public int _isHurtHash;
+
+    public override void Awake()
+    {
+        base.Awake();
+        _animator = GetComponentInChildren<Animator>();
+        _isHurtHash = Animator.StringToHash("isHurt");
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        _animator.SetTrigger(_isHurtHash);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        Tile.TileState = TileState.Empty;
+        Tile.Unit = null;
+    }
 }

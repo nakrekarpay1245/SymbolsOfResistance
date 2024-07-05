@@ -185,7 +185,7 @@ public class Selector : MonoBehaviour, ICollector /*,ISelector*/
     private void ShowUnitDisplayer()
     {
         _unitDisplayerSprite.sprite = _selectedUnit.UnitIcon;
-        _unitDisplayer.DOScale(1f, 0.5f);
+        _unitDisplayer.DOScale(0.75f, 0.5f);
     }
     private void HideUnitDisplayer()
     {

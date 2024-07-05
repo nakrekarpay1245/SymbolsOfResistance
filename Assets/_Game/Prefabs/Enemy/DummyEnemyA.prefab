@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.33333334, b: 0.07450981, a: 1}
+  m_Color: {r: 1, g: 0.29411766, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -224,6 +224,9 @@ MonoBehaviour:
     m_Bits: 128
   _enemyDetectionDistance: 1.1
   _enemyDetectionRadius: 0.5
+  _animator: {fileID: 0}
+  _isAttackHash: 0
+  _isHurtHash: 0
 --- !u!1 &3452088328363032567
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 3452088328363032567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -645,6 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3261851223924149687}
   - component: {fileID: 3407904138624931114}
+  - component: {fileID: 7292088307880272962}
   m_Layer: 7
   m_Name: SoldierSprite
   m_TagString: Untagged
@@ -661,8 +665,8 @@ Transform:
   m_GameObject: {fileID: 8634540252535612402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.125, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7932619358958464008}
@@ -708,17 +712,38 @@ SpriteRenderer:
   m_SortingLayerID: 1501292725
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a83aacb227fc0fe48bd012e23983c298, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c5cb1a45a3b7774b91517f3469d2eff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9980469, y: 1.46875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7292088307880272962
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634540252535612402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 024c42516bc7d254c97c4bbe81f9204c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4637706516778570089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,11 +754,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2943
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.z
@@ -837,9 +862,17 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19840014, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 19875214, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
       propertyPath: looping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875214, guid: 6c799f27268ab784fb7e0d7898a22758, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

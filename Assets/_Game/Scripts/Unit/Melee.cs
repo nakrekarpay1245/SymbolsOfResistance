@@ -25,10 +25,15 @@ public class Melee : Unit
     [SerializeField]
     private string _attackClipKey = "AttackClip";
 
+    public int _isAttackHash;
+
     //Private
     private bool _enemyDetected;
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
+        _isAttackHash = Animator.StringToHash("isAttack");
+
         _weaponList = new List<Weapon>();
 
         // Get all Weapon components in children and add them to the list
@@ -87,6 +92,9 @@ public class Melee : Unit
     {
         GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_attackParticleKey, transform.position);
         GlobalBinder.singleton.AudioManager.PlaySound(_attackClipKey);
+
+        _animator.SetTrigger(_isAttackHash);
+
         foreach (Weapon weapon in _weaponList)
         {
             weapon.Attack();

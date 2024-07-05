@@ -46,6 +46,12 @@ public class Enemy : AbstractDamagable
     [SerializeField]
     private float _enemyDetectionRadius = 0.5f;
 
+    [Header("Animation Params")]
+    [SerializeField]
+    public Animator _animator;
+    public int _isAttackHash;
+    public int _isHurtHash;
+
     //Components
     private Rigidbody2D _rigidbody;
 
@@ -54,12 +60,19 @@ public class Enemy : AbstractDamagable
     private bool _enemyDetected;
     private EnemyManager _enemyManager;
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _weapon = GetComponentInChildren<Weapon>();
 
         _enemyManager = GetComponentInParent<EnemyManager>();
+
+        _animator = GetComponentInChildren<Animator>();
+
+        _isAttackHash = Animator.StringToHash("isAttack");
+        _isHurtHash = Animator.StringToHash("isHurt");
 
         _weapon.DamageAmount = _damage;
         SetSpeed(_walkSpeed);
@@ -184,6 +197,8 @@ public class Enemy : AbstractDamagable
         GlobalBinder.singleton.ParticleManager.PlayParticleAtPoint(_attackParticleKey, transform.position);
         GlobalBinder.singleton.AudioManager.PlaySound(_attackClipKey);
 
+        _animator.SetTrigger(_isAttackHash);
+        Debug.Log("Enemy attack animation");
         _weapon.Attack();
     }
 
@@ -191,6 +206,7 @@ public class Enemy : AbstractDamagable
     {
         base.TakeDamage(damage);
         BackUp();
+        _animator.SetTrigger(_isHurtHash);
     }
 
     public override void Die()
