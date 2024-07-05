@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 3569855418108908086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.199638, y: 1.4757347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -186,6 +186,8 @@ MonoBehaviour:
   _rockPrefab: {fileID: 1905802432540258109, guid: c7a1b3a9cfa6b384fb1a8976a9eac2b8, type: 3}
   _rockForce: 250
   _muzzleTransform: {fileID: 8344228721369928611}
+  _throwParticleKey: RockThrowParticle
+  _throwClipKey: RockThrowClip
   _enemyDetected: 0
 --- !u!1 &4012640664087094586
 GameObject:
