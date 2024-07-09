@@ -42,6 +42,10 @@ public class LevelManager : MonoBehaviour
 
     private int _currentLevelIndex = 0;
 
+    [Header("Tutroial Params")]
+    [SerializeField]
+    private MenuView _tutorial;
+
     private void Start()
     {
         // Initialize buttons with corresponding functions
@@ -58,6 +62,9 @@ public class LevelManager : MonoBehaviour
         _levelFailText.gameObject.SetActive(false);
         _gamePausedText.gameObject.SetActive(false);
         _countdownText.gameObject.SetActive(false);
+
+        if (_tutorial)
+            _tutorial.Open();
 
         StartCountDown();
     }
@@ -231,5 +238,11 @@ public class LevelManager : MonoBehaviour
         // Add logic to load the main menu scene here
         SceneManager.LoadScene(0);
         Debug.Log("Navigated to Menu");
+    }
+
+    public void CloseTutorial()
+    {
+        if (_tutorial)
+            _tutorial.Close();
     }
 }

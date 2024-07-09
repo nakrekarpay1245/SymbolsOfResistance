@@ -21,14 +21,8 @@ public class GlobalBinder : MonoSingleton<GlobalBinder>
     [Header("Level")]
     public LevelManager LevelManager;
 
-    [Header("Manager")]
-    public Manager Manager;
-
     [Header("Particle")]
     public ParticleManager ParticleManager;
-
-    [Header("Pause")]
-    public PauseManager PauseManager;
 
     [Header("PopUp")]
     public PopUpTextManager PopUpTextManager;

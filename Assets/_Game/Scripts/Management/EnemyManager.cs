@@ -29,6 +29,9 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("Time interval between each wave of enemies.")]
     [SerializeField] private float _waveInterval = 5f;
 
+    [Tooltip("Time interval between each wave of enemies.")]
+    [SerializeField] private float _startDelay = 7f;
+
     [Header("UI Elements")]
     [Tooltip("Displayer displaying the current wave")]
     [SerializeField] private Image _waveDisplayer;
@@ -48,9 +51,10 @@ public class EnemyManager : MonoBehaviour
 
     private IEnumerator SpawnWaves()
     {
+        yield return new WaitForSeconds(_startDelay);
+
         while (_currentWaveIndex < _waves.Count)
         {
-            yield return new WaitForSeconds(_waveInterval);
             Wave currentWave = _waves[_currentWaveIndex];
             DisplayWaveText();
             ResetDeadEnemyCount();
@@ -63,6 +67,8 @@ public class EnemyManager : MonoBehaviour
             }
 
             yield return new WaitUntil(() => AllEnemiesKilled());
+
+            yield return new WaitForSeconds(_waveInterval);
 
             _currentWaveIndex++;
         }

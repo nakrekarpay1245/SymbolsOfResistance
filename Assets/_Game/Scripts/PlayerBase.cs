@@ -80,7 +80,7 @@ public class PlayerBase : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.gameObject.SetActive(false);
+                enemy.Die();
                 TakeDamage(1);
             }
         }

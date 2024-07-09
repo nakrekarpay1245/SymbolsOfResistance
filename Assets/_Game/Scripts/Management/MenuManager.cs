@@ -38,6 +38,11 @@ public class MenuManager : MonoBehaviour
     }
     #endregion
 
+    public void OpenUrl(string URL)
+    {
+        Application.OpenURL(URL);
+    }
+
     /// <summary>
     /// Adds an event trigger to a game object.
     /// </summary>
