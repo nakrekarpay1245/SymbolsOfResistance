@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Audio;
 
 namespace Leaf._helpers
 {
@@ -18,12 +18,9 @@ namespace Leaf._helpers
         [SerializeField]
         private List<Audio> _audioList = new List<Audio>();
 
-        //[SerializeField]
-        //private Slider musicSlider;
-        //[SerializeField]
-        //private Slider soundSlider;
-        [SerializeField]
-        private Toggle soundToggle;
+        [Header("Audio Mixer")]
+        [Tooltip("Audio mixer group for sound effects.")]
+        [SerializeField] private AudioMixerGroup _soundMixerGroup;
 
         private void Awake()
         {
@@ -31,22 +28,8 @@ namespace Leaf._helpers
             for (int i = 0; i < _maximumAudioCount; i++)
             {
                 AudioSource newSource = gameObject.AddComponent<AudioSource>();
+                newSource.outputAudioMixerGroup = _soundMixerGroup;
                 _audioSources.Add(newSource);
-            }
-        }
-
-        private void Start()
-        {
-            //if (soundSlider != null)
-            //{
-            //    masterVolume = SaveLoadManager.singleton.GetSoundVolume();
-            //    //musicSlider.value = masterVolume;
-            //    soundSlider.value = masterVolume;
-            //}
-            if (soundToggle != null)
-            {
-                //isAudioSourceMuted = SaveLoadManager.singleton.GetSoundMuted();
-                soundToggle.isOn = !_isAudioSourceMuted;
             }
         }
 
@@ -123,45 +106,6 @@ namespace Leaf._helpers
             activeSource.volume = _masterVolume * volume;
             activeSource.loop = loop;
             activeSource.Play();
-        }
-
-        /// <summary>
-        /// This function stops all audio playback from all audio sources in the audioSources list
-        /// </summary>
-        public void StopAllSounds()
-        {
-            for (int i = 0; i < _audioSources.Count; i++)
-            {
-                _audioSources[i].Stop();
-            }
-        }
-
-        //public void SetMasterVolume(float volume)
-        //{
-        //    masterVolume = volume;
-        //    for (int i = 0; i < audioSources.Count; i++)
-        //    {
-        //        bool isAudioSourcePlaying = audioSources[i].isPlaying;
-        //        audioSources[i].volume = audioSources[i].volume * volume;
-
-        //        if (isAudioSourcePlaying)
-        //            audioSources[i].Play();
-        //    }
-
-        //    //SaveLoadManager.singleton.SetMusicVolume(masterVolume);
-        //    SaveLoadManager.singleton.SetSoundVolume(masterVolume);
-        //}
-
-        public void ToggleMute(bool toogleValue)
-        {
-            for (int i = 0; i < _audioSources.Count; i++)
-            {
-                _audioSources[i].mute = !_audioSources[i].mute;
-                _isAudioSourceMuted = _audioSources[i].mute;
-            }
-
-            //SaveLoadManager.singleton.SetSoundMuted(audioSources[0].mute);
-            //SaveLoadManager.singleton.SetMusicMuted(audioSources[0].mute);
         }
     }
 }
