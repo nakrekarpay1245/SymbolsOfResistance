@@ -330,9 +330,11 @@ MonoBehaviour:
   _normalColor: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 1}
   _hoverColor: {r: 190, g: 190, b: 179, a: 1}
   _pressedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &111925665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,9 +1049,11 @@ MonoBehaviour:
   _normalColor: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 1}
   _hoverColor: {r: 190, g: 190, b: 179, a: 1}
   _pressedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &357410304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,34 +1753,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1958161818}
     m_Modifications:
-    - target: {fileID: 2413729733506907108, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 98cd9c91ad993a94d99fbcc87580c8c0, type: 3}
-    - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_text
-      value: "\u015Eeyda Nur Ya\u015Farsoy"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_fontSize
-      value: 47.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1859,86 +1835,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_text
-      value: UI/UX Designer - 2D Artist
+      value: Game Designer-Developer
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_fontSize
-      value: 37.5
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017221195}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenUrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: https://www.linkedin.com/in/erkanyaprak/
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Name
       value: PersonDisplayer (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5343931712488728625, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-    - {fileID: 4318978464596513617, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 643381194}
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 643381193}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
 --- !u!224 &643381191 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
   m_PrefabInstance: {fileID: 643381190}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &643381192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-  m_PrefabInstance: {fileID: 643381190}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &643381193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643381192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _normalColor: {r: 232, g: 232, b: 232, a: 1}
-  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
-  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
-  OnPressed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &643381194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643381192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2017221195}
-          m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-          m_MethodName: OpenUrl
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: https://www.linkedin.com/in/erkanyaprak/
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &654528916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,9 +2524,11 @@ MonoBehaviour:
   _normalColor: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 1}
   _hoverColor: {r: 190, g: 190, b: 179, a: 1}
   _pressedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &884209096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3345,9 +3295,11 @@ MonoBehaviour:
   _normalColor: {r: 0, g: 0, b: 0, a: 1}
   _hoverColor: {r: 1, g: 0, b: 0, a: 1}
   _pressedColor: {r: 0.49019608, g: 0, b: 0, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &1164333240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4055,9 +4007,11 @@ MonoBehaviour:
   _normalColor: {r: 0, g: 0, b: 0, a: 1}
   _hoverColor: {r: 1, g: 0, b: 0, a: 1}
   _pressedColor: {r: 0.49019608, g: 0, b: 0, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &1365835684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,9 +4288,11 @@ MonoBehaviour:
   _normalColor: {r: 0.6862745, g: 0.6862745, b: 0.6862745, a: 1}
   _hoverColor: {r: 190, g: 190, b: 179, a: 1}
   _pressedColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
       m_Calls: []
+  _transitionDuration: 0.25
 --- !u!114 &1391467354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4830,6 +4786,8 @@ GameObject:
   - component: {fileID: 1634941310}
   - component: {fileID: 1634941312}
   - component: {fileID: 1634941311}
+  - component: {fileID: 1634941314}
+  - component: {fileID: 1634941313}
   m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
@@ -4953,6 +4911,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634941309}
   m_CullTransparentMesh: 1
+--- !u!114 &1634941313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634941309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normalColor: {r: 0, g: 0, b: 0, a: 1}
+  _hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  _pressedColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+--- !u!114 &1634941314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634941309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1697028359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,30 +5045,10 @@ PrefabInstance:
     - target: {fileID: 2413729733506907108, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0bc3d1b2e8acc3340957ea246ebbacb0, type: 3}
+      objectReference: {fileID: -124069188, guid: 6eda6703b2be53b43b73088c5a9ca1cc, type: 3}
     - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_text
       value: "S\xFCheyla Yaz\u0131c\u0131o\u011Flu"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_fontSize
-      value: 48.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Pivot.x
@@ -5161,86 +5132,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_text
-      value: 2D Artist - Animator
+      value: Character Designer
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_fontSize
-      value: 45.85
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017221195}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenUrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: https://www.linkedin.com/in/suheyla-yazicioglu/
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Name
       value: PersonDisplayer (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5343931712488728625, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-    - {fileID: 4318978464596513617, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1725800001}
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1725800000}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
 --- !u!224 &1725799998 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
   m_PrefabInstance: {fileID: 1725799997}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1725799999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-  m_PrefabInstance: {fileID: 1725799997}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1725800000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725799999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _normalColor: {r: 232, g: 232, b: 232, a: 1}
-  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
-  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
-  OnPressed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1725800001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725799999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2017221195}
-          m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-          m_MethodName: OpenUrl
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: https://www.linkedin.com/in/suheyla-yazicioglu/
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1730026992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,7 +6169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df0614539c28e5b4990816673f0aa290, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc5d34749e41f6b4691be49b75f8b4bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6316,13 +6259,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5e6f2549efe524ea80018fab281b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leafButtons:
+  _leafButtons:
   - {fileID: 5010680142574383974}
   - {fileID: 1750993679}
   - {fileID: 1199083497}
   - {fileID: 1151152715}
   - {fileID: 2103374849}
   - {fileID: 589403410}
+  _musicClips:
+  - {fileID: 8300000, guid: d9850c4cd64277c4eaeaa994f87331d9, type: 3}
+  - {fileID: 8300000, guid: 7f536137c71d6a945bbc3ede611ad581, type: 3}
+  - {fileID: 8300000, guid: e0161be568ab8c8439e407ff0e8ebfa3, type: 3}
+  - {fileID: 8300000, guid: 0e392a32c8132d74c946f988ce2f15fc, type: 3}
+  _musicButton: {fileID: 1634941313}
+  _audioSource: {fileID: 141890798}
 --- !u!224 &2046519460 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5024917749950476059, guid: ea9b0993aecc38847af3e9b182089791, type: 3}
@@ -6875,25 +6825,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1958161818}
     m_Modifications:
+    - target: {fileID: 2413729733506907108, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2044189436, guid: 6eda6703b2be53b43b73088c5a9ca1cc, type: 3}
+    - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: m_text
+      value: "\u015Eeyda Nur Ya\u015Farsoy"
+      objectReference: {fileID: 0}
     - target: {fileID: 2996090194304603222, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_fontSize
-      value: 56.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3125643683948211487, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      value: 47.65
       objectReference: {fileID: 0}
     - target: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Pivot.x
@@ -6977,86 +6919,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_text
-      value: Game Designer - Game Developer
+      value: UI Designer
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_fontSize
-      value: 33.75
+      value: 56.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2017221195}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenUrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: https://www.linkedin.com/in/seydanuryasarsoy/
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_Name
       value: PersonDisplayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5343931712488728625, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-    - {fileID: 4318978464596513617, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7105904401688713388}
-    - targetCorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7105904401688713387}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
 --- !u!224 &7105904401688713385 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3717818113976374819, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
   m_PrefabInstance: {fileID: 7105904401688713384}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7105904401688713386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7800830926803249310, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
-  m_PrefabInstance: {fileID: 7105904401688713384}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7105904401688713387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7105904401688713386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _normalColor: {r: 232, g: 232, b: 232, a: 1}
-  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
-  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
-  OnPressed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7105904401688713388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7105904401688713386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2017221195}
-          m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-          m_MethodName: OpenUrl
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: https://www.linkedin.com/in/seydanuryasarsoy/
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7064,6 +6978,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1141208120}
   - {fileID: 141890799}
-  - {fileID: 245177552}
   - {fileID: 1064490869}
+  - {fileID: 245177552}
   - {fileID: 1120478380}
