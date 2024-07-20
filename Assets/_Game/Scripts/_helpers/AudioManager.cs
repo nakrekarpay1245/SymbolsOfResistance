@@ -75,6 +75,42 @@ namespace Leaf._helpers
         }
 
         /// <summary>
+        /// Plays an audio clip with the given name, volume, and loop setting, using an available AudioSource.
+        /// If no AudioSource is available, logs a warning message and returns without playing the
+        /// </summary>
+        /// <param name="clipName"></param>
+        public void PlaySound(string clipName)
+        {
+            // Find audio source which is not playing
+            AudioSource activeSource = null;
+            for (int i = 0; i < _audioSources.Count; i++)
+            {
+                if (!_audioSources[i].isPlaying)
+                {
+                    activeSource = _audioSources[i];
+                    break;
+                }
+            }
+
+            if (activeSource == null)
+            {
+                Debug.LogWarning("There is no any other audioSource");
+                return;
+            }
+
+            for (int i = 0; i < _audioList.Count; i++)
+            {
+                if (clipName == _audioList[i].Name)
+                {
+                    activeSource.mute = _isAudioSourceMuted;
+
+                    activeSource.clip = _audioList[i].Clip;
+                    activeSource.Play();
+                }
+            }
+        }
+
+        /// <summary>
         /// Plays an audio clip with the given clip reference, volume, and loop setting, using an available AudioSource.
         /// If no AudioSource is available, logs a warning message and returns without playing the   
         /// /// </summary>

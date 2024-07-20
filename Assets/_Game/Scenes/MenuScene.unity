@@ -333,7 +333,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &111925665
 MonoBehaviour:
@@ -1052,7 +1064,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &357410304
 MonoBehaviour:
@@ -2527,7 +2551,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &884209096
 MonoBehaviour:
@@ -2645,10 +2681,17 @@ MonoBehaviour:
   _isAudioSourceMuted: 0
   _audioSources: []
   _audioList:
-  - Name: RockThrowClip
-    _clipArray: []
-    Volume: 0
-    Pitch: 0
+  - Name: ButtonHoverClip
+    _clipArray:
+    - {fileID: 8300000, guid: 5dd17999496f84e4a97c04667db0bbdf, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+  - Name: ButtonPressClip
+    _clipArray:
+    - {fileID: 8300000, guid: cb4f72a4210b3784d92b49b566a85c47, type: 3}
+    Volume: 1
+    Pitch: 1
     Loop: 0
   _soundMixerGroup: {fileID: 0}
 --- !u!1 &931123207
@@ -3298,7 +3341,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &1164333240
 MonoBehaviour:
@@ -4010,7 +4065,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &1365835684
 MonoBehaviour:
@@ -4291,7 +4358,19 @@ MonoBehaviour:
   _highlightImage: {fileID: 0}
   OnPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 897084226}
+        m_TargetAssemblyTypeName: Leaf._helpers.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPress
+          m_BoolArgument: 0
+        m_CallState: 2
   _transitionDuration: 0.25
 --- !u!114 &1391467354
 MonoBehaviour:
@@ -6266,6 +6345,8 @@ MonoBehaviour:
   - {fileID: 1151152715}
   - {fileID: 2103374849}
   - {fileID: 589403410}
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
   _musicClips:
   - {fileID: 8300000, guid: d9850c4cd64277c4eaeaa994f87331d9, type: 3}
   - {fileID: 8300000, guid: 7f536137c71d6a945bbc3ede611ad581, type: 3}

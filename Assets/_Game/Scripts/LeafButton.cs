@@ -34,6 +34,12 @@ public class LeafButton : MonoBehaviour
     [SerializeField]
     private float _transitionDuration = 0.25f;
 
+    [Header("Sound Params")]
+    [SerializeField]
+    private string _buttonPressClipKey = "ButtonPressClip";
+    [SerializeField]
+    private string _buttonHoverClipKey = "ButtonHoverClip";
+
     /// <summary>
     /// Initializes the Image component and sets up EventTrigger events.
     /// </summary>
@@ -90,6 +96,8 @@ public class LeafButton : MonoBehaviour
         else if (_buttonText)
             _buttonText.DOColor(_hoverColor, _transitionDuration);
 
+        GlobalBinder.singleton.AudioManager.PlaySound(_buttonHoverClipKey);
+
         Highlight(true);
     }
 
@@ -117,6 +125,8 @@ public class LeafButton : MonoBehaviour
             _buttonImage.DOColor(_pressedColor, _transitionDuration);
         else if (_buttonText)
             _buttonText.DOColor(_pressedColor, _transitionDuration);
+
+        GlobalBinder.singleton.AudioManager.PlaySound(_buttonPressClipKey);
 
         OnPressed?.Invoke();
     }
