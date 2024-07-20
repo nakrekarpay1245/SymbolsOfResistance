@@ -1,29 +1,128 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
+/// <summary>
+/// Manages the menu interactions and scene transitions.
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
     //PARAMS
     #region PARAMS
     [Header("MenuManager Params")]
-    [Header("Start")]
-    [SerializeField]
-    private EventTrigger _startButton;
-
-    [Header("Quit")]
-    [SerializeField]
-    private EventTrigger _quitButton;
+    [Tooltip("List of LeafButton components in the menu.")]
+    [SerializeField] private List<LeafButton> leafButtons;
     #endregion
+
+    private int _currentButtonIndex = 0;
 
     private void Awake()
     {
-        AddEventTrigger(_startButton.gameObject, EventTriggerType.PointerClick, StartLevel);
-        AddEventTrigger(_quitButton.gameObject, EventTriggerType.PointerClick, Quit);
+        // Ensure there are LeafButtons in the list
+        if (leafButtons == null || leafButtons.Count == 0)
+        {
+            Debug.LogError("No LeafButtons assigned in the MenuManager.");
+            return;
+        }
+
+        // Assign functions to buttons
+        foreach (var button in leafButtons)
+        {
+            if (button.name == "StartButton")
+            {
+                button.OnPressed.AddListener(StartLevel);
+            }
+            else if (button.name == "QuitButton")
+            {
+                button.OnPressed.AddListener(Quit);
+            }
+        }
     }
 
-    //GAME
-    #region GAME
+    private void Start()
+    {
+        // Highlight the first button initially
+        HoverButton(_currentButtonIndex);
+    }
+
+    private void Update()
+    {
+        HandleKeyboardInput();
+    }
+
+    /// <summary>
+    /// Handles keyboard inputs for navigating and interacting with the menu buttons.
+    /// </summary>
+    private void HandleKeyboardInput()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            MoveToNextButton();
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            MoveToPreviousButton();
+        }
+        else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+        {
+            PressCurrentButton();
+        }
+    }
+
+    /// <summary>
+    /// Moves the highlight to the next button in the list.
+    /// </summary>
+    private void MoveToNextButton()
+    {
+        _currentButtonIndex = (_currentButtonIndex + 1) % leafButtons.Count;
+        HoverButton(_currentButtonIndex);
+    }
+
+    /// <summary>
+    /// Moves the highlight to the previous button in the list.
+    /// </summary>
+    private void MoveToPreviousButton()
+    {
+        _currentButtonIndex = (_currentButtonIndex - 1 + leafButtons.Count) % leafButtons.Count;
+        HoverButton(_currentButtonIndex);
+    }
+
+    /// <summary>
+    /// Triggers the press action of the currently highlighted button.
+    /// </summary>
+    private void PressCurrentButton()
+    {
+        var currentButton = leafButtons[_currentButtonIndex];
+        ExecuteEvents.Execute(currentButton.gameObject, new PointerEventData(EventSystem.current),
+            ExecuteEvents.pointerDownHandler);
+    }
+
+    /// <summary>
+    /// Highlights the button at the specified index.
+    /// </summary>
+    /// <param name="index">Index of the button to highlight.</param>
+    private void HoverButton(int index)
+    {
+        for (int i = 0; i < leafButtons.Count; i++)
+        {
+            if (i == index)
+            {
+                ExecuteEvents.Execute(leafButtons[i].gameObject, new PointerEventData(EventSystem.current),
+                    ExecuteEvents.pointerEnterHandler);
+
+                Debug.Log(leafButtons[_currentButtonIndex].name + " Hover");
+            }
+            else
+            {
+                ExecuteEvents.Execute(leafButtons[i].gameObject, new PointerEventData(EventSystem.current),
+                    ExecuteEvents.pointerExitHandler);
+            }
+        }
+    }
+
+    //START
+    #region START
     private void StartLevel()
     {
         SceneManager.LoadScene(1);
@@ -41,23 +140,5 @@ public class MenuManager : MonoBehaviour
     public void OpenUrl(string URL)
     {
         Application.OpenURL(URL);
-    }
-
-    /// <summary>
-    /// Adds an event trigger to a game object.
-    /// </summary>
-    /// <param name="obj">The game object to add the event trigger to.</param>
-    /// <param name="type">The type of event trigger.</param>
-    /// <param name="action">The action to invoke on the event.</param>
-    private void AddEventTrigger(GameObject obj, EventTriggerType type, UnityEngine.Events.UnityAction action)
-    {
-        EventTrigger trigger = obj.GetComponent<EventTrigger>();
-        if (trigger == null)
-        {
-            trigger = obj.AddComponent<EventTrigger>();
-        }
-        var entry = new EventTrigger.Entry { eventID = type };
-        entry.callback.AddListener((eventData) => action());
-        trigger.triggers.Add(entry);
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.Events;
+using DG.Tweening; // DoTween for smooth transitions
 
 /// <summary>
 /// The LeafButton class handles the color change of an Image component when the mouse interacts with it 
@@ -11,15 +13,26 @@ using TMPro;
 public class LeafButton : MonoBehaviour
 {
     [Header("Colors")]
-    [Tooltip("Color when the mouse is over the button.")]
-    [SerializeField] private Color hoverColor = new Color(190f, 190f, 179f);
-    [Tooltip("Color when the button is pressed.")]
-    [SerializeField] private Color pressedColor = new Color(175f, 175f, 175f);
     [Tooltip("Color when the mouse is not interacting with the button.")]
-    [SerializeField] private Color normalColor = new Color(232f, 232f, 232f);
+    [SerializeField] private Color _normalColor = new Color(232f, 232f, 232f);
+    [Tooltip("Color when the mouse is over the button.")]
+    [SerializeField] private Color _hoverColor = new Color(190f, 190f, 179f);
+    [Tooltip("Color when the button is pressed.")]
+    [SerializeField] private Color _pressedColor = new Color(175f, 175f, 175f);
+
+    [Header("Highlight")]
+    [Tooltip("Image component to show when the button is selected.")]
+    [SerializeField] private Image _highlightImage;
+
+    [Tooltip("Event to invoke when the button is pressed.")]
+    public UnityEvent OnPressed;
 
     private Image _buttonImage;
     private TextMeshProUGUI _buttonText;
+
+    [Header("Transation Speed")]
+    [SerializeField]
+    private float _transitionDuration = 0.25f;
 
     /// <summary>
     /// Initializes the Image component and sets up EventTrigger events.
@@ -28,11 +41,11 @@ public class LeafButton : MonoBehaviour
     {
         _buttonImage = GetComponent<Image>();
         if (_buttonImage)
-            _buttonImage.color = normalColor;
+            _buttonImage.color = _normalColor;
 
         _buttonText = GetComponent<TextMeshProUGUI>();
         if (_buttonText)
-            _buttonText.color = normalColor;
+            _buttonText.color = _normalColor;
 
         EventTrigger eventTrigger = GetComponent<EventTrigger>();
         if (eventTrigger == null)
@@ -44,6 +57,12 @@ public class LeafButton : MonoBehaviour
         AddEventTrigger(eventTrigger, EventTriggerType.PointerExit, OnPointerExit);
         AddEventTrigger(eventTrigger, EventTriggerType.PointerDown, OnPointerDown);
         AddEventTrigger(eventTrigger, EventTriggerType.PointerUp, OnPointerUp);
+
+        if (_highlightImage)
+        {
+            _highlightImage.DOFade(0, 0f);
+            _highlightImage.transform.DOScale(0, 0f);
+        }
     }
 
     /// <summary>
@@ -52,7 +71,8 @@ public class LeafButton : MonoBehaviour
     /// <param name="trigger">The EventTrigger component.</param>
     /// <param name="eventType">The type of event to trigger.</param>
     /// <param name="action">The callback function to invoke.</param>
-    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, System.Action<BaseEventData> action)
+    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType,
+        System.Action<BaseEventData> action)
     {
         EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
         entry.callback.AddListener((data) => action.Invoke((BaseEventData)data));
@@ -66,11 +86,12 @@ public class LeafButton : MonoBehaviour
     private void OnPointerEnter(BaseEventData eventData)
     {
         if (_buttonImage)
-            _buttonImage.color = hoverColor;
+            _buttonImage.DOColor(_hoverColor, _transitionDuration);
         else if (_buttonText)
-            _buttonText.color = hoverColor;
-    }
+            _buttonText.DOColor(_hoverColor, _transitionDuration);
 
+        Highlight(true);
+    }
 
     /// <summary>
     /// Changes the button color to normalColor when the mouse exits the button.
@@ -79,21 +100,25 @@ public class LeafButton : MonoBehaviour
     private void OnPointerExit(BaseEventData eventData)
     {
         if (_buttonImage)
-            _buttonImage.color = normalColor;
+            _buttonImage.DOColor(_normalColor, _transitionDuration);
         else if (_buttonText)
-            _buttonText.color = normalColor;
+            _buttonText.DOColor(_normalColor, _transitionDuration);
+
+        Highlight(false);
     }
 
     /// <summary>
-    /// Changes the button color to pressedColor when the button is pressed.
+    /// Changes the button color to pressedColor when the button is pressed and invokes onPressed event.
     /// </summary>
     /// <param name="eventData">Pointer event data.</param>
     private void OnPointerDown(BaseEventData eventData)
     {
         if (_buttonImage)
-            _buttonImage.color = pressedColor;
+            _buttonImage.DOColor(_pressedColor, _transitionDuration);
         else if (_buttonText)
-            _buttonText.color = pressedColor;
+            _buttonText.DOColor(_pressedColor, _transitionDuration);
+
+        OnPressed?.Invoke();
     }
 
     /// <summary>
@@ -105,16 +130,30 @@ public class LeafButton : MonoBehaviour
         if (eventData is PointerEventData pointerEventData && pointerEventData.hovered.Contains(gameObject))
         {
             if (_buttonImage)
-                _buttonImage.color = hoverColor;
+                _buttonImage.DOColor(_hoverColor, _transitionDuration);
             else if (_buttonText)
-                _buttonText.color = hoverColor;
+                _buttonText.DOColor(_hoverColor, _transitionDuration);
         }
         else
         {
             if (_buttonImage)
-                _buttonImage.color = normalColor;
+                _buttonImage.DOColor(_normalColor, _transitionDuration);
             else if (_buttonText)
-                _buttonText.color = normalColor;
+                _buttonText.DOColor(_normalColor, _transitionDuration);
+        }
+    }
+
+    /// <summary>
+    /// Highlights or hides the highlight image using DoTween.
+    /// </summary>
+    /// <param name="highlight">True to highlight, false to hide.</param>
+    private void Highlight(bool highlight)
+    {
+        if (_highlightImage)
+        {
+            float alpha = highlight ? 1f : 0f;
+            _highlightImage.DOFade(alpha, _transitionDuration);
+            _highlightImage.transform.DOScale(highlight ? 1 : 0, _transitionDuration);
         }
     }
 }
