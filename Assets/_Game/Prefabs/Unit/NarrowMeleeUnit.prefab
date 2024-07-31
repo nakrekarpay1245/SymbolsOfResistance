@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3376282899300617756}
   - component: {fileID: 339401634708211523}
   m_Layer: 0
-  m_Name: AuntSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 3013473451043312658}
   - component: {fileID: 8142138345154019927}
   m_Layer: 0
-  m_Name: UnitShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

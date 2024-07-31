@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 2103448745010485432}
   - component: {fileID: 4280311366578096948}
   m_Layer: 0
-  m_Name: UnitShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 8213528418178230609}
   - component: {fileID: 3737957790068799029}
   m_Layer: 0
-  m_Name: TreeSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

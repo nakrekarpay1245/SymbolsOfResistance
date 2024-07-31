@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 459037207520591584}
   - component: {fileID: 3823176413629943327}
   m_Layer: 0
-  m_Name: UnitShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 2024650990773870915}
   - component: {fileID: 4263041945292782608}
   m_Layer: 0
-  m_Name: BoySprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

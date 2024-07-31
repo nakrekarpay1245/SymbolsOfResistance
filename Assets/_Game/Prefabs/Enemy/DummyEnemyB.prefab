@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 3407904138624931114}
   - component: {fileID: 5985567199424185266}
   m_Layer: 7
-  m_Name: DogSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

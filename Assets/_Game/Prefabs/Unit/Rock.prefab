@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1077065942329626080}
   - component: {fileID: 2519139570071711860}
   m_Layer: 8
-  m_Name: RockBody
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 5996119814893951899}
   - component: {fileID: 466905378248156303}
   m_Layer: 8
-  m_Name: RockShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3376282899300617756}
   - component: {fileID: 2706688281113161127}
   m_Layer: 0
-  m_Name: ManSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 6664976814839706442}
   - component: {fileID: 5386519118270155239}
   m_Layer: 0
-  m_Name: UnitShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

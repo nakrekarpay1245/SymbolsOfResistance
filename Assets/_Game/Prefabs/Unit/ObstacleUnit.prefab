@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 2989890684867039700}
   - component: {fileID: 7344374080619988809}
   m_Layer: 0
-  m_Name: UnitShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 2024650990773870915}
   - component: {fileID: 6098506200486569039}
   m_Layer: 0
-  m_Name: BarrelSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

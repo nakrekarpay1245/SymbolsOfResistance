@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 3407904138624931114}
   - component: {fileID: 8702040809126248732}
   m_Layer: 7
-  m_Name: DroneSprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
