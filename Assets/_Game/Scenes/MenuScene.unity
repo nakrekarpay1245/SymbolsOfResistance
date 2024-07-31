@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,6 +346,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &111925665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,6 +1079,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &357410304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,6 +2568,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &884209096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,6 +3360,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &1164333240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4079,6 +4086,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &1365835684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4372,6 +4381,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &1391467354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5010,6 +5021,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!114 &1634941314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6345,8 +6358,6 @@ MonoBehaviour:
   - {fileID: 1151152715}
   - {fileID: 2103374849}
   - {fileID: 589403410}
-  _buttonPressClipKey: ButtonPressClip
-  _buttonHoverClipKey: ButtonHoverClip
   _musicClips:
   - {fileID: 8300000, guid: d9850c4cd64277c4eaeaa994f87331d9, type: 3}
   - {fileID: 8300000, guid: 7f536137c71d6a945bbc3ede611ad581, type: 3}
