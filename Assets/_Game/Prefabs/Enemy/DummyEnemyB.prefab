@@ -235,9 +235,6 @@ MonoBehaviour:
     m_Bits: 128
   _enemyDetectionDistance: 1.1
   _enemyDetectionRadius: 0.5
-  _animator: {fileID: 0}
-  _isAttackHash: 0
-  _isHurtHash: 0
 --- !u!95 &4584266062508392447
 Animator:
   serializedVersion: 5
@@ -295,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 192, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1142630387336830407
@@ -687,8 +684,8 @@ Transform:
   m_GameObject: {fileID: 6927805215643471057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0.1, y: -0.25, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7932619358958464008}
@@ -909,11 +906,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.125
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2353697732013504844, guid: f6f58e4748456294399efd0561342790, type: 3}
       propertyPath: m_LocalPosition.z
