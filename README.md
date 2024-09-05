@@ -5,7 +5,8 @@
 ---
 
 ## 🎥 Gameplay Video
-*Include a link to your gameplay video here*
+
+<iframe width="1468" height="562" src="https://www.youtube.com/embed/3QVXpNsEM9w" title="Symbols Of Resistance | ÖZGÜR FİLİSTİN GAME JAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -94,12 +95,12 @@ In **Özgür Filistin**, you must protect Mescid-i Aksa from waves of enemies by
 
 If you have any questions, feedback, or suggestions, feel free to contact us:
 
-- **Erkan Yaprak**: [erkanyaprak@example.com](mailto:erkanyaprak@example.com)
-- **Şeyda Nur Yaşarsoy**: [seydanuryasarsoy@example.com](mailto:seydanuryasarsoy@example.com)
-- **Süheyla Yazıcı**: [suhyla.yazici@example.com](mailto:suhyla.yazici@example.com)
+- **Erkan Yaprak**: [erkanyaprak@example.com](mailto:rknyprk79@gmail.com)
+- **Şeyda Nur Yaşarsoy**: [seydanuryasarsoy@example.com](mailto:yasarsoyseyda@gmail.com)
+- **Süheyla Yazıcı**: [suhyla.yazici@example.com](mailto:suheyla.yazicioglu0@gmail.com)
 
 ---
 
 ## Additional Resources
 
-- **ErkanYaprak_UnityHelpers Package**: A custom Unity package including ObjectPool, MonoSingleton, GameStateManager, PopUpTextManager, and more. [Check out the repository here](https://github.com/ErkanYaprak/UnityHelpers).
+- **ErkanYaprak_UnityHelpers Package**: A custom Unity package including ObjectPool, MonoSingleton, GameStateManager, PopUpTextManager, and more. [Check out the repository here](https://github.com/nakrekarpay1245/ErkanYaprak_UnityHelpers).
