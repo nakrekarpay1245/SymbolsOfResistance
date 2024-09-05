@@ -609,9 +609,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 0.5882353, g: 0.39215687, b: 0.29411766, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &2343667726941700455
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,9 +780,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 0.49019608, g: 1, b: 0, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &2472425376849587858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +1039,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 1, b: 1, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &3112355897601765341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,9 +1645,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &4140869007074100460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1938,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1198.5, y: 793.5}
+  m_SizeDelta: {x: 1029, y: 681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8181537677680525923
 CanvasRenderer:
@@ -1940,7 +1968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc5d34749e41f6b4691be49b75f8b4bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 209d5c4530ec7a249bd2f83e053d376a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2245,9 +2273,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 0.49019608, g: 0, b: 0, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &6547694710590212043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,9 +3249,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd8912685e2b274ab1d09ca74f364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  pressedColor: {r: 1, g: 1, b: 1, a: 1}
-  normalColor: {r: 0, g: 0.49019608, b: 0, a: 1}
+  _normalColor: {r: 232, g: 232, b: 232, a: 1}
+  _hoverColor: {r: 190, g: 190, b: 179, a: 1}
+  _pressedColor: {r: 175, g: 175, b: 175, a: 1}
+  _highlightImage: {fileID: 0}
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  _transitionDuration: 0.25
+  _buttonPressClipKey: ButtonPressClip
+  _buttonHoverClipKey: ButtonHoverClip
 --- !u!1 &8830413708597340917
 GameObject:
   m_ObjectHideFlags: 0
