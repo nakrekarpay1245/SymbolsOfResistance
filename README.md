@@ -6,9 +6,10 @@
 
 ## 🎥 Gameplay Video
 
-<iframe width="1468" height="562" src="https://www.youtube.com/embed/3QVXpNsEM9w" title="Symbols Of Resistance | ÖZGÜR FİLİSTİN GAME JAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Symbols Of Resistance | ÖZGÜR FİLİSTİN GAME JAM](https://img.youtube.com/vi/3QVXpNsEM9w/0.jpg)](https://www.youtube.com/watch?v=3QVXpNsEM9w)
 
 ---
+
 
 ## 🎮 Gameplay Overview
 
