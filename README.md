@@ -84,7 +84,7 @@ In **Özgür Filistin**, you must protect Mescid-i Aksa from waves of enemies by
 
 ## 👨‍💻 Team Members
 
-| ![Erkan Yaprak](https://your-photo-url-here) | ![Şeyda Nur Yaşarsoy](https://your-photo-url-here) | ![Süheyla Yazıcı](https://your-photo-url-here) |
+| ![Erkan Yaprak](Assets/_Game/Art/UI/Publishing/Erkan.png) | ![Şeyda Nur Yaşarsoy](Assets/_Game/Art/UI/Publishing/Seyda.png) | ![Süheyla Yazıcı](Assets/_Game/Art/UI/Publishing/Suheyla.png) |
 |:--:|:--:|:--:|
 | [Erkan Yaprak](https://www.linkedin.com/in/erkanyaprak/) <br> *Game Developer + Game Designer* | [Şeyda Nur Yaşarsoy](https://www.linkedin.com/in/seydanuryasarsoy/) <br> *Game Designer + 2D Artist + Environment Artist + UI/UX Designer* | [Süheyla Yazıcı](https://www.linkedin.com/in/suheyla-yazicioglu/) <br> *2D Artist + Character Artist* |
 
