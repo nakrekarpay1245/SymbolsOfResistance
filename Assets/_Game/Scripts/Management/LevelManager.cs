@@ -3,6 +3,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Manages the level and UI elements using DOTween for smooth animations.
@@ -11,31 +12,34 @@ public class LevelManager : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField, Tooltip("Pause menu UI element")]
-    private CanvasGroup _pauseMenu;
+    private CanvasGroup _menu;
+
+    [SerializeField, Tooltip("Level complete background UI element")]
+    private Image _levelCompleteBackground;
+
+    [SerializeField, Tooltip("Level fail background UI element")]
+    private Image _levelFailBackground;
+
+    [SerializeField, Tooltip("Game pause background UI element")]
+    private Image _gamePausedBackground;
 
     [SerializeField, Tooltip("Resume button UI element")]
-    private EventTrigger _resumeButton;
+    private EventTrigger _keepGoingButton;
+
+    [SerializeField, Tooltip("Restart button UI element")]
+    private EventTrigger _tryAgainButton;
 
     [SerializeField, Tooltip("Restart button UI element")]
     private EventTrigger _restartButton;
 
     [SerializeField, Tooltip("Menu button UI element")]
-    private EventTrigger _menuButton;
+    private EventTrigger _mainMenuButton;
 
     [SerializeField, Tooltip("Pause button UI element")]
-    private EventTrigger _nextButton;
+    private EventTrigger _continueButton;
 
     [SerializeField, Tooltip("Pause button UI element")]
     private EventTrigger _pauseButton;
-
-    [SerializeField, Tooltip("Level complete text UI element")]
-    private TextMeshProUGUI _levelCompleteText;
-
-    [SerializeField, Tooltip("Level fail text UI element")]
-    private TextMeshProUGUI _levelFailText;
-
-    [SerializeField, Tooltip("Game pause text UI element")]
-    private TextMeshProUGUI _gamePausedText;
 
     [SerializeField, Tooltip("Countdown text UI element")]
     private TextMeshProUGUI _countdownText;
@@ -49,18 +53,19 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         // Initialize buttons with corresponding functions
-        AddEventTrigger(_resumeButton, EventTriggerType.PointerDown, Resume);
+        AddEventTrigger(_keepGoingButton, EventTriggerType.PointerDown, Resume);
+        AddEventTrigger(_tryAgainButton, EventTriggerType.PointerDown, Restart);
         AddEventTrigger(_restartButton, EventTriggerType.PointerDown, Restart);
-        AddEventTrigger(_menuButton, EventTriggerType.PointerDown, Menu);
-        AddEventTrigger(_nextButton, EventTriggerType.PointerDown, Next);
+        AddEventTrigger(_mainMenuButton, EventTriggerType.PointerDown, Menu);
+        AddEventTrigger(_continueButton, EventTriggerType.PointerDown, Next);
         AddEventTrigger(_pauseButton, EventTriggerType.PointerDown, Pause);
 
         // Hide pause menu and end level texts at the start
-        _pauseMenu.alpha = 0;
-        _pauseMenu.gameObject.SetActive(false);
-        _levelCompleteText.gameObject.SetActive(false);
-        _levelFailText.gameObject.SetActive(false);
-        _gamePausedText.gameObject.SetActive(false);
+        _menu.alpha = 0;
+        _menu.gameObject.SetActive(false);
+        _levelCompleteBackground.gameObject.SetActive(false);
+        _levelFailBackground.gameObject.SetActive(false);
+        _gamePausedBackground.gameObject.SetActive(false);
         _countdownText.gameObject.SetActive(false);
 
         if (_tutorial)
@@ -116,23 +121,23 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void LevelComplete()
     {
-        _levelCompleteText.gameObject.SetActive(true);
-        _levelFailText.gameObject.SetActive(false);
-        _pauseMenu.gameObject.SetActive(true);
-        _gamePausedText.gameObject.SetActive(false);
+        _levelCompleteBackground.gameObject.SetActive(true);
+        _levelFailBackground.gameObject.SetActive(false);
+        _gamePausedBackground.gameObject.SetActive(false);
 
-        _resumeButton.gameObject.SetActive(false);
+        _keepGoingButton.gameObject.SetActive(false);
+        _tryAgainButton.gameObject.SetActive(false);
         _restartButton.gameObject.SetActive(true);
-        _menuButton.gameObject.SetActive(true);
-        _nextButton.gameObject.SetActive(true);
+        _mainMenuButton.gameObject.SetActive(true);
+        _continueButton.gameObject.SetActive(true);
 
-        _pauseMenu.DOFade(1, 1f).OnComplete(() =>
+        _menu.gameObject.SetActive(true);
+
+        _menu.DOFade(1, 1f).OnComplete(() =>
         {
-            _levelCompleteText.DOFade(1, 1f).SetDelay(2f).OnComplete(() =>
-            {
-                IncreaseLevelIndex();
-            });
+            IncreaseLevelIndex();
         });
+
         Debug.Log("Level Complete");
     }
 
@@ -141,20 +146,20 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void LevelFail()
     {
-        _levelFailText.gameObject.SetActive(true);
-        _levelCompleteText.gameObject.SetActive(false);
-        _pauseMenu.gameObject.SetActive(true);
-        _gamePausedText.gameObject.SetActive(false);
+        _levelFailBackground.gameObject.SetActive(true);
+        _levelCompleteBackground.gameObject.SetActive(false);
+        _gamePausedBackground.gameObject.SetActive(false);
 
-        _resumeButton.gameObject.SetActive(false);
-        _nextButton.gameObject.SetActive(false);
-        _restartButton.gameObject.SetActive(true);
-        _menuButton.gameObject.SetActive(true);
+        _keepGoingButton.gameObject.SetActive(false);
+        _tryAgainButton.gameObject.SetActive(true);
+        _continueButton.gameObject.SetActive(false);
+        _restartButton.gameObject.SetActive(false);
+        _mainMenuButton.gameObject.SetActive(true);
 
-        _pauseMenu.DOFade(1, 1f).OnComplete(() =>
-        {
-            _levelFailText.DOFade(1, 1f).SetDelay(2f);
-        });
+        _menu.gameObject.SetActive(true);
+
+        _menu.DOFade(1, 1f);
+
         Debug.Log("Level Fail");
     }
 
@@ -174,14 +179,19 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        _pauseMenu.gameObject.SetActive(true);
-        _gamePausedText.gameObject.SetActive(true);
+        _gamePausedBackground.gameObject.SetActive(true);
 
         _pauseButton.gameObject.SetActive(false);
-        _nextButton.gameObject.SetActive(false);
+        _continueButton.gameObject.SetActive(false);
+        _tryAgainButton.gameObject.SetActive(false);
+        _keepGoingButton.gameObject.SetActive(true);
+        _restartButton.gameObject.SetActive(true);
+        _mainMenuButton.gameObject.SetActive(true);
+
+        _menu.gameObject.SetActive(true);
 
         Sequence pauseSequence = DOTween.Sequence();
-        pauseSequence.Append(_pauseMenu.DOFade(1, 0.5f))
+        pauseSequence.Append(_menu.DOFade(1, 0.5f))
                       .AppendCallback(() =>
                       {
                           Time.timeScale = 0;
@@ -197,11 +207,11 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         _pauseButton.gameObject.SetActive(true);
         Sequence resumeSequence = DOTween.Sequence();
-        resumeSequence.Append(_pauseMenu.DOFade(0, 0.5f))
+        resumeSequence.Append(_menu.DOFade(0, 0.5f))
                       .OnComplete(() =>
                       {
-                          _gamePausedText.gameObject.SetActive(false);
-                          _pauseMenu.gameObject.SetActive(false);
+                          _gamePausedBackground.gameObject.SetActive(false);
+                          _menu.gameObject.SetActive(false);
                           Debug.Log("Game Resumed");
                       });
     }

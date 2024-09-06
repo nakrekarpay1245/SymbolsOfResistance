@@ -820,6 +820,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1454531464}
   - {fileID: 63594480}
   - {fileID: 1366776910}
   - {fileID: 307408381}
@@ -1231,7 +1232,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1799662635}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.19739825
+  m_Size: 0.35880768
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4486,6 +4487,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1454531463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454531464}
+  - component: {fileID: 1454531466}
+  - component: {fileID: 1454531465}
+  m_Layer: 5
+  m_Name: ResBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1454531464
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454531463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245177552}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1024, y: 1024}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1454531465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454531463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.9725491, b: 0.95294124, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1454531466
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454531463}
+  m_CullTransparentMesh: 1
 --- !u!1 &1457815602
 GameObject:
   m_ObjectHideFlags: 0
@@ -5740,7 +5816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589, y: -1532.435}
+  m_AnchoredPosition: {x: 589, y: -843.07}
   m_SizeDelta: {x: 1158, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806899475
@@ -5777,64 +5853,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Filistin, tarihin en uzun ve en ac\u0131mas\u0131z direni\u015Flerinden
-    birine sahne olan kadim bir toprakt\u0131r. Bu topraklar, y\xFCzy\u0131llar boyunca
-    pek \xE7ok medeniyetin be\u015Fi\u011Fi olmu\u015F, ancak Filistin halk\u0131n\u0131n
-    \xF6zg\xFCrl\xFCk m\xFCcadelesi, modern \xE7a\u011F\u0131n en dokunakl\u0131
-    hikayelerinden birini yazm\u0131\u015Ft\u0131r. Bu yaz\u0131da, Filistin direni\u015Finin
-    kilometre ta\u015Flar\u0131n\u0131 ve bu direni\u015Fe \xF6nc\xFCl\xFCk eden
-    \xF6nemli ki\u015Fileri duygusal bir bak\u0131\u015F a\xE7\u0131s\u0131yla ele
-    alaca\u011F\u0131z.\n\n1917: Balfour Deklarasyonu\n1917 y\u0131l\u0131nda \u0130ngiliz
-    D\u0131\u015Fi\u015Fleri Bakan\u0131 Arthur Balfour\u2019un, Yahudi halk\u0131na
-    Filistin'de bir ulusal yurt vaadini i\xE7eren Balfour Deklarasyonu, Filistinlilerin
-    topraklar\u0131na y\xF6nelik tehditlerin ba\u015Flang\u0131c\u0131 oldu. Bu belge,
-    Filistin halk\u0131n\u0131n uzun ve zorlu m\xFCcadelesinin fitilini ate\u015Fledi.\n\n1948:
-    Nakba (B\xFCy\xFCk Felaket)\n14 May\u0131s 1948\u2019de \u0130srail Devleti\u2019nin
-    kurulu\u015Fu ilan edildi\u011Finde, y\xFCzbinlerce Filistinli evlerinden zorla
-    \xE7\u0131kar\u0131ld\u0131 ve m\xFClteci durumuna d\xFC\u015Ft\xFC. Bu olay,
-    Filistin tarihine \"Nakba\" (B\xFCy\xFCk Felaket) olarak ge\xE7ti. Filistinli
-    ailelerin parampar\xE7a oldu\u011Fu, \xE7ocuklar\u0131n annesiz, babas\u0131z
-    kald\u0131\u011F\u0131 bu d\xF6nemde direni\u015F ruhu daha da g\xFC\xE7lendi.\n\n1967:
-    Alt\u0131 G\xFCn Sava\u015F\u0131\n1967 y\u0131l\u0131nda ger\xE7ekle\u015Fen
-    Alt\u0131 G\xFCn Sava\u015F\u0131, Filistin topraklar\u0131n\u0131n b\xFCy\xFCk
-    bir k\u0131sm\u0131n\u0131n \u0130srail taraf\u0131ndan i\u015Fgal edilmesine
-    yol a\xE7t\u0131. Kud\xFCs, Bat\u0131 \u015Eeria ve Gazze \u015Eeridi'nin i\u015Fgali,
-    Filistin direni\u015Finin daha da yo\u011Funla\u015Fmas\u0131na neden oldu. Bu
-    d\xF6nemde, halk\u0131n kahraman\u0131 Yaser Arafat, Filistin Kurtulu\u015F \xD6rg\xFCt\xFC'n\xFC
-    (FK\xD6) kurarak ulusal m\xFCcadelenin sembol\xFC haline geldi.\n\n1987: Birinci
-    \u0130ntifada\n1987 y\u0131l\u0131nda patlak veren Birinci \u0130ntifada (ayaklanma),
-    Filistinlilerin i\u015Fgale kar\u015F\u0131 kitlesel direni\u015Finin en \xF6nemli
-    \xF6rneklerinden biriydi. Gen\xE7 ya\u015Fl\u0131 demeden halk, ta\u015Flarla
-    ve ellerindeki s\u0131n\u0131rl\u0131 imk\xE2nlarla \u0130srail askerlerine kar\u015F\u0131
-    koydu. Bu direni\u015F, d\xFCnya kamuoyunun Filistin meselesine dikkatini \xE7ekti
-    ve direni\u015Fin sembol\xFC oldu.\n\n1993: Oslo Anla\u015Fmalar\u0131\n1993
-    y\u0131l\u0131nda Yaser Arafat ve \u0130srail Ba\u015Fbakan\u0131 \u0130zak Rabin
-    aras\u0131nda imzalanan Oslo Anla\u015Fmalar\u0131, bar\u0131\u015F umutlar\u0131n\u0131
-    ye\u015Fertti. Ancak anla\u015Fman\u0131n beklentileri kar\u015F\u0131lamamas\u0131,
-    hayal k\u0131r\u0131kl\u0131klar\u0131 ve yeni \xE7at\u0131\u015Fmalar do\u011Furdu.
-    Yine de bu d\xF6nem, Filistinlilerin bar\u0131\u015F i\xE7in verdi\u011Fi m\xFCcadelenin
-    bir g\xF6stergesiydi.\n\n2000: \u0130kinci \u0130ntifada\n2000 y\u0131l\u0131nda
-    ba\u015Flayan \u0130kinci \u0130ntifada, Filistin halk\u0131n\u0131n i\u015Fgale
-    kar\u015F\u0131 bir kez daha ayakland\u0131\u011F\u0131 bir d\xF6nem oldu. \u0130srail'in
-    Mescid-i Aksa'ya y\xF6nelik provokatif eylemleri, halk\u0131n \xF6fkesini doru\u011Fa
-    \xE7\u0131kard\u0131. Bu d\xF6nemde, pek \xE7ok sivil hayat\u0131n\u0131 kaybederken,
-    direni\u015Fin sembol isimlerinden \u015Eeyh Ahmed Yasin gibi liderler ortaya
-    \xE7\u0131kt\u0131.\n\n2008-2009: Gazze Sava\u015F\u0131\n2008-2009 y\u0131llar\u0131nda
-    \u0130srail\u2019in Gazze\u2019ye y\xF6nelik ba\u015Flatt\u0131\u011F\u0131 askeri
-    operasyonlar, binlerce sivilin \xF6l\xFCm\xFCne ve yaralanmas\u0131na yol a\xE7t\u0131.
-    Gazze'nin direni\u015F\xE7ileri, t\xFCm zorluklara ra\u011Fmen \xF6zg\xFCrl\xFCk
-    i\xE7in sava\u015Fmaya devam etti. Bu d\xF6nemde Filistin halk\u0131n\u0131n
-    direni\u015F ruhu bir kez daha t\xFCm d\xFCnyaya g\xF6sterildi.\n\nG\xFCn\xFCm\xFCz\nFilistin
-    direni\u015Fi, bug\xFCn de devam ediyor. Nesiller boyu s\xFCren bu onurlu m\xFCcadelede,
-    bir\xE7ok isim unutulmaz kahramanlar olarak an\u0131l\u0131yor. Yaser Arafat,
-    \u015Eeyh Ahmed Yasin, Leyla Halid ve Marwan Barghouti gibi isimler, direni\u015Fin
-    sembolleri haline geldi.\n\nSonu\xE7\nFilistin halk\u0131n\u0131n direni\u015Fi,
-    sadece bir toprak m\xFCcadelesi de\u011Fil, ayn\u0131 zamanda onur, haysiyet
-    ve \xF6zg\xFCrl\xFCk i\xE7in verilen bir sava\u015Ft\u0131r. Her ta\u015F\u0131n
-    alt\u0131ndan \xE7\u0131kan bir hikaye, her \xE7ocu\u011Fun g\xF6z\xFCndeki umut,
-    bu direni\u015Fin bir par\xE7as\u0131d\u0131r. Filistin\u2019in \xF6zg\xFCrl\xFCk
-    m\xFCcadelesi, d\xFCnyan\u0131n d\xF6rt bir yan\u0131ndaki mazlum halklara ilham
-    vermeye devam ediyor."
+  m_text: "\n1987: The First Intifada In 1987, the First Intifada (uprising) broke
+    out, which was one of the most significant examples of the Palestinian people's
+    mass resistance against the occupation. People of all ages stood up to Israeli
+    soldiers with stones and whatever limited means they had. This uprising drew
+    the world's attention to the Palestinian cause and became a symbol of the resistance.\n\n1993:
+    The Oslo Accords In 1993, Yasser Arafat and Israeli Prime Minister Yitzhak Rabin
+    signed the Oslo Accords, which brought hope for peace. However, the agreement
+    did not meet expectations and led to disappointment and new conflicts. Still,
+    this period showed the Palestinians' commitment to seeking peace.\n\n2000: The
+    Second Intifada The Second Intifada, which began in 2000, marked another uprising
+    of the Palestinian people against the occupation. Israeli actions around the
+    Al-Aqsa Mosque provoked the people\u2019s anger. Many civilians lost their lives
+    during this time, and leaders like Sheikh Ahmed Yassin emerged as symbols of
+    the resistance.\n\n2008-2009: The Gaza War In 2008-2009, Israel launched military
+    operations in Gaza, resulting in the death and injury of thousands of civilians.
+    Despite all the hardships, Gaza's resistance fighters continued to fight for
+    freedom. Once again, the Palestinian people's spirit of resistance was displayed
+    to the world.\n\nPresent Day The Palestinian resistance continues to this day.
+    In this long and honorable struggle, many names have become unforgettable heroes.
+    Figures like Yasser Arafat, Sheikh Ahmed Yassin, Leila Khaled, and Marwan Barghouti
+    have become symbols of the resistance.\n\nConclusion The Palestinian people's
+    resistance is not just a fight over land, but a battle for dignity, honor, and
+    freedom. Every story, every child's hopeful eyes, are part of this struggle.
+    Palestine's fight for freedom continues to inspire oppressed people all over
+    the world."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 705928d6dd35baa4b8431f3db5c5bbdc, type: 2}
   m_sharedMaterial: {fileID: 7140202585543408517, guid: 705928d6dd35baa4b8431f3db5c5bbdc, type: 2}
@@ -7015,7 +7058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090669716714174901, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: m_fontSize
-      value: 56.9
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7248786963330380536, guid: cde00d9a5dc818149ba845e0e7257e88, type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
