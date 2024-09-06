@@ -6,7 +6,7 @@
 
 ## 🎥 Gameplay Video
 
-[![Symbols Of Resistance | ÖZGÜR FİLİSTİN GAME JAM](https://img.youtube.com/vi/3QVXpNsEM9w/0.jpg)](https://www.youtube.com/watch?v=3QVXpNsEM9w)
+[![Symbols Of Resistance | ÖZGÜR FİLİSTİN GAME JAM](https://img.youtube.com/vi/cOtwO37dG7Y/0.jpg)](https://youtu.be/cOtwO37dG7Y)
 
 ---
 
@@ -96,9 +96,9 @@ In **Özgür Filistin**, you must protect Mescid-i Aksa from waves of enemies by
 
 If you have any questions, feedback, or suggestions, feel free to contact us:
 
-- **Erkan Yaprak**: [erkanyaprak@example.com](mailto:rknyprk79@gmail.com)
-- **Şeyda Nur Yaşarsoy**: [seydanuryasarsoy@example.com](mailto:yasarsoyseyda@gmail.com)
-- **Süheyla Yazıcı**: [suhyla.yazici@example.com](mailto:suheyla.yazicioglu0@gmail.com)
+- **Erkan Yaprak**: [rknyprk79@gmail.com](mailto:rknyprk79@gmail.com)
+- **Şeyda Nur Yaşarsoy**: [yasarsoyseyda@gmail.com](mailto:yasarsoyseyda@gmail.com)
+- **Süheyla Yazıcı**: [suheyla.yazicioglu0@gmail.com](mailto:suheyla.yazicioglu0@gmail.com)
 
 ---
 
