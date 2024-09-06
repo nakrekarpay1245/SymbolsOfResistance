@@ -693,7 +693,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2359,6 +2359,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2871721897985039033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800424854588098681, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187479897364594982, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
+      propertyPath: m_Name
+      value: MapBG
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 435e4ba26c45af04490460ab6b4140d2, type: 3}
 --- !u!1001 &3052641784128545069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2536,6 +2593,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1535347411}
+    - target: {fileID: 2665874056948929221, guid: 1269474515c648d43b83dfc3268143ad, type: 3}
+      propertyPath: m_text
+      value: "1- Click on the unit icons on the right side to place them on the scene.
+        \n2- You produce units by spending olives, and you can see your olives in
+        the top right. \n3- The Tree unit produces olives; you can collect them by
+        clicking on the olives.\n4- The Barrel unit stops enemies but can't attack
+        them. \n5- The Child unit throws stones at enemies to attack."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665874056948929221, guid: 1269474515c648d43b83dfc3268143ad, type: 3}
+      propertyPath: m_fontSize
+      value: 43.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3587713435506922372, guid: 1269474515c648d43b83dfc3268143ad, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2837,6 +2906,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 957234136}
   - {fileID: 410452570}
+  - {fileID: 2871721897985039033}
   - {fileID: 1141208120}
   - {fileID: 141890799}
   - {fileID: 809331378}
