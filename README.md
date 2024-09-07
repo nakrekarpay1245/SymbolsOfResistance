@@ -61,8 +61,7 @@ In **Özgür Filistin**, you must protect Mescid-i Aksa from waves of enemies by
 
 ## 🌐 WebGL Demo
 
-*Include a link to your WebGL demo here*
-
+[WebGL Demo and downloadable PC and Anroid version](https://seydanuryasarsoy.itch.io/symbols-of-resistance)
 ---
 
 ## 📚 Architecture & Design
